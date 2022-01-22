@@ -103,7 +103,7 @@ try PROJEKTNAME().publish(using: [
     .generateHTML(withTheme: .foundation),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
-    .deploy(using: .gitHub("USERNAME/PROJEKT-NAME"))
+    .deploy(using: .gitHub("USERNAME/PROJEKT-NAME"), branch: "main")
 ])
 ```
 
@@ -119,4 +119,4 @@ Oder indem man das `Scheme` in Xcode ändert, `Product > Scheme > Edit Scheme…
 
 Persönlich nutze ich dafür immer die Kommandozeile, denn so gehe ich wirklich sicher dass ich nicht aus Versehen irgendwelche Änderungen veröffentliche bevor diese wirklich fertig sind.
 
-Eine Sache die ich für meine Webseite noch zusätzlich gemacht habe, ist ein weiterer Branch, `Author`, in dem sich dann sowohl die `.md` Dateien wie auch die Quelldateien für meine Webseite befinden.
+Eine Sache die ich für meine Webseite noch zusätzlich gemacht habe, ist ein weiterer Branch, `author`, in dem sich dann sowohl die `.md` Dateien wie auch die Quelldateien für meine Webseite befinden. Änderungen kann ich so erst lokal testen bis ich zufrieden bin, dann den `author` branch comitten und über `publish deploy` wird die generierte Seite dann auf den `main` branch gepushed.
