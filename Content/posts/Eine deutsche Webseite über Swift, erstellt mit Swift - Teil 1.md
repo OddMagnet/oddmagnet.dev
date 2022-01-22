@@ -1,3 +1,8 @@
+---
+date: 2022-01-22 20:44
+description: Wie diese Seite erstellt wurde, Teil 1.
+tags: Erster Eintrag, Blog, Publish
+---
 # Eine deutsche Webseite über Swift, erstellt mit Swift - Teil 1
 
 ## Ein kleines Vorwort
