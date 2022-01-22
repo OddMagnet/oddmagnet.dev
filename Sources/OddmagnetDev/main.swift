@@ -29,5 +29,5 @@ try OddmagnetDev().publish(using: [
     .generateHTML(withTheme: .foundation),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
-    .deploy(using: .gitHub("OddMagnet/oddmagnet.dev"))
+    .deploy(using: .gitHub("OddMagnet/oddmagnet.dev", branch: "main"))
 ])
