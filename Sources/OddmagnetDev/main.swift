@@ -24,6 +24,7 @@ struct OddmagnetDev: Website {
 // This will generate your website using the built-in Foundation theme:
 try OddmagnetDev().publish(using: [
     .copyResources(),
+    .addMarkdownFiles(),
     .sortItems(by: \.date),
     .generateHTML(withTheme: .foundation),
     .generateRSSFeed(including: [.posts]),

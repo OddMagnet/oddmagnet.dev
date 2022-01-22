@@ -1,8 +1,3 @@
----
-date: 2022-01-22 20:44
-description: Wie diese Seite erstellt wurde, Teil 1.
-tags: Erster Eintrag, Blog, Publish
----
 # Eine deutsche Webseite über Swift, erstellt mit Swift - Teil 1
 
 ## Ein kleines Vorwort
@@ -97,12 +92,19 @@ zu
 
 ```swift
 try PROJEKTNAME().publish(using: [
+    .copyResources(),
+    .addMarkdownFiles(),
+    .sortItems(by: \.date),
     .generateHTML(withTheme: .foundation),
+    .generateRSSFeed(including: [.posts]),
+    .generateSiteMap(),
     .deploy(using: .gitHub("USERNAME/PROJEKT-NAME"))
 ])
 ```
 
-Standardmäßig wird der `deploy` Schritt nur ausgeführt wenn das `--deploy` flag vorhanden ist. Das kann man dann entweder direkt über die Kommandozeile machen:
+Im obigen Beispiel wurden einfach alle Schritte die bei `.publish(withTheme: .foundation)` ausgeführt wurden auch wieder gelistet. Generell sind die Schritte optional, wer beispielsweise kein RSS Feed haben will kann den Schritt dafür einfach weglassen. 
+
+Der für diesen Teil des Beitrags relevante `deploy` Schritt wird allerdings nur ausgeführt wenn das `--deploy` flag vorhanden ist. Das kann man dann entweder direkt über die Kommandozeile machen:
 
 ```bash
 $ publish deploy
