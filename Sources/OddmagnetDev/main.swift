@@ -40,5 +40,5 @@ try OddmagnetDev().publish(using: [
     .generateHTML(withTheme: .oddTheme),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
-    .deploy(using: .gitHub("OddMagnet/oddmagnet.dev", branch: "site"))
+    .deploy(using: .gitHub("OddMagnet/oddmagnet.dev", branch: "main"))
 ])
