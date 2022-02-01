@@ -1,5 +1,4 @@
 ---
-date: 2022-01-23 14:42
 description: Wie diese Seite erstellt wurde, Teil 2.
 tags: Blog, Publish, Splash, Plugin
 ---
