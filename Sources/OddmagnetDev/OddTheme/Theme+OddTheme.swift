@@ -84,6 +84,9 @@ private struct OddThemeHTMLFactory<Site: Website>: HTMLFactory {
                             Div(item.content.body).class("content")
                             Span("Tagged with: ")
                             ItemTagList(item: item, site: context.site)
+                            if #available(macOS 12.0, *) {
+                                Paragraph("Last modified: \(item.date.formatted(date: .abbreviated, time: .shortened))")
+                            }
                         }
                     }
                     SiteFooter()
