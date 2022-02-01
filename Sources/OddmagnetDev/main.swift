@@ -16,6 +16,9 @@ struct OddmagnetDev: Website {
 
     struct ItemMetadata: WebsiteItemMetadata {
         // Add any site-specific metadata that you want to use here.
+        // Uses the metadata from the markdown files
+        let tags: [Tag]
+        let description: String
     }
 
     // Update these properties to configure your website:
@@ -32,7 +35,7 @@ try OddmagnetDev().publish(using: [
     .installPlugin(.splash(withClassPrefix: "")),
     .addMarkdownFiles(),
     .copyResources(),
-    .sortItems(by: \.date),
+    .sortItems(in: .posts, by: \.date, order: .descending),
     // TODO: add custom theme
     .generateHTML(withTheme: .oddTheme),
     .generateRSSFeed(including: [.posts]),
