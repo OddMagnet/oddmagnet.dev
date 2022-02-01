@@ -1,1 +1,444 @@
-body { background-color: #2e3141; }
+// Mixins
+@import 'libs/mixins'
+
+// Variables
+@import 'libs/vars'
+
+.date
+    display: inline-block
+    color: $color-text-second
+    font-size: $font-metadata
+
+article blockquote > p
+    font-style: italic
+    position: relative
+    padding: $spacing-text calc($spacing-normal + $mark-width)
+    color: $color-text-second
+    border-radius: 4px 8px 8px 4px
+
+article blockquote > p:before
+    content: ""
+    position: absolute
+    width: $mark-width
+    height: 100%
+    top: 0
+    left: 0
+    background-color: $color-text-second
+    border-radius: 8px
+
+// Article
+article.full > div a  
+    color: $color-main
+article.full > div a:hover  
+    text-decoration: underline
+
+article.full > header
+    display: flex
+    flex-wrap: wrap
+    align-items: baseline
+    margin-bottom: $spacing-block
+    gap: $spacing-normal
+
+article.full > header h1
+    flex-basis: 100%
+    margin-bottom: 0
+
+article header .share
+    align-self: center
+    margin-left: auto
+
+article.full > div ol, article.full > div ul  
+    margin-bottom: $spacing-paragraph
+article.full > div li  
+    margin-left: $spacing-block
+article.full > div li  
+    line-height: 1.7
+
+article.full h2
+    padding-left: calc($spacing-normal + $mark-width)
+
+article.full h2:before
+    content: ""
+    position: absolute
+    width: $mark-width
+    height: 80%
+    top: 10%
+    left: 0
+    background-color: $color-main
+    border-radius: 8px
+
+article table
+    border-collapse: collapse
+    margin: 0 auto $spacing-medium auto
+
+article table th
+    padding-right: $spacing-normal
+
+article table td
+    padding: $spacing-small 0 $spacing-small $spacing-normal
+
+
+/** PREVIEWS **/
+aside.related  
+    margin-top: $spacing-section
+
+.previews
+    --font-title: 1.6em
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+aside.related > .previews
+    --font-title: 1.4em
+
+    justify-content: flex-start
+
+.previews > li
+    list-style-type: none
+    flex-basis: 100%
+    margin-bottom: $spacing-block
+    box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1)
+    padding: $spacing-medium
+    border-radius: 16px
+    overflow: hidden
+    transition: all 0.6s ease
+
+@media (min-width: 965px)
+    li.preview  
+        flex-basis: 100%
+
+    li.preview:nth-child(3n+1)  
+        flex-basis: calc(50% - $spacing-block) / 2
+    li.preview:last-child:nth-child(3n+1)  
+        flex-basis: 100%
+
+    li.preview:nth-child(3n+2)
+        flex-basis: calc(50% - $spacing-block) / 2
+        margin-left: $spacing-block
+
+    li.related
+        flex-basis: 33%
+        flex-grow: 1
+        margin-right: 16px
+
+    li.related:last-child  
+        margin-right: 0
+
+.previews > li:hover
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.15)
+    transform: translate3D(-2px,-2px,0)
+    transition: all 0.3s ease
+
+.previews h1  
+    font-weight: 600
+
+// Code
+pre > code
+    display: block
+    overflow: scroll
+    font-size: 1.2em
+    line-height: 1.5em
+    background-color: $code-background
+    color: $code-text
+    padding: 16px
+    margin: $spacing-block 0
+    border-radius: 8px
+
+p > code, li code
+    display: inline-block
+    line-height: 1.5em
+    vertical-align: middle
+    color: $code-keyword
+    background: $color-background-second
+    padding: 0px 4px
+    margin: 0px 1px
+    border-radius: 4px
+
+code span.keyword
+    color: $code-keyword
+    font-size: 1em
+
+code span.type
+    color: $code-typename
+
+code span.string
+    color: $code-literal-string
+
+code span.number
+    color: $code-literal-number
+
+code span.property
+    color: $code-type-attribute
+
+code span.call
+    color: $code-methodname
+
+code span.comment
+    color: $code-comment
+
+footer
+    font-size: $font-footnote
+    padding: $spacing-block 0
+    background: $color-text
+    color: white
+
+footer #copyrights > *
+    display: block
+    margin: 0
+    text-align: center
+
+#about-me
+    width: $body-width
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: $spacing-paragraph
+
+#about-me > img
+    width: 100px
+    border-radius: 50%
+    border: solid 3px white
+    box-shadow: none
+
+#about-me li
+    display: inline-block
+    list-style-type: none
+
+#blog_header
+    display: flex
+    position: relative
+    width: $body-width
+    margin: 0 $body-spacing
+    justify-content: center
+    flex-wrap: wrap
+
+#blog_title
+    flex-basis: 100%
+    text-align: center
+
+#blog_title h1
+    font-size: $font-blog-title
+    font-family: Spartan
+    font-weight: 600
+    margin: 0
+
+#blog_title h1 span.unwrap:before
+    content: '/'
+    font-size: 34px
+    letter-spacing: -0.05em
+
+#blog_title h1 span.unwrap
+    font-weight: normal
+    font-size: 38px
+
+#blog_title .description
+    font-size: $font-metadata
+    color: #98A0B0
+    position: relative
+    top: -4px
+
+#blog_header nav
+    --gap: $spacing-block
+
+    display: flex
+    text-transform: uppercase
+    color: $color-text-second
+    font-size: $font-metadata
+
+#blog_header nav a  
+    opacity: 0.5
+#blog_header nav a:hover  
+    opacity: 1
+
+#menu
+    position: absolute
+    top: 0
+    right: 0
+
+@media (max-width: 964px)
+    #blog_header
+        padding-top: $spacing-paragraph
+
+nav > h2
+    font-size: $font-metadata
+    font-weight: normal
+    text-transform: uppercase
+    color: $color-text-second
+    letter-spacing: 0.05em
+
+nav ul
+    display: flex
+    flex-wrap: wrap
+    gap: $spacing-normal
+
+nav ul > li  
+    list-style-type: none
+ul.share  
+    list-style: none
+
+.share > li  
+    display: inline-block
+
+.share i::before
+    font-size: 22px
+    vertical-align: middle
+
+.share a
+    display: inline-block
+    text-align: center
+    min-width: 35px
+    color: $color-text-second
+
+#blog_header .share i::before  
+    font-size: 14px
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html
+    font-family: "Open Sans"
+
+body
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    color: $color-text
+
+h1
+    font-size: $font-title
+    margin-bottom: $spacing-paragraph
+
+h2
+    line-height: 1.3em
+    position: relative
+    margin-bottom: $spacing-normal
+
+* + h2
+    margin-top: $spacing-large
+
+h3  
+    margin-bottom: $spacing-text
+* + h3  
+    margin-top: $spacing-block
+h2 + h3  
+    margin-top: $spacing-text
+
+p
+    font-size: $font-text
+    line-height: 1.8
+    margin-bottom: $spacing-paragraph
+
+a
+    text-decoration: none
+    color: unset
+
+a:hover
+    text-decoration: underline
+    color: $color-action
+
+a:hover h1, h1 > a:hover
+    color: $color-main
+    text-decoration: none
+
+a.absolute-link:hover
+    color: unset
+    text-decoration: none
+
+body > header
+    padding: $spacing-medium 0 $spacing-normal 0
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px
+
+body > .content
+    flex-grow: 1
+    padding: $spacing-large 0
+    min-height: 600px
+    width: $body-width
+    margin: 0 $body-spacing
+
+.content > section
+    margin-bottom: $spacing-block
+
+// Tags & Colors
+// .tag.architecture  
+//     background-color: $color-architecture
+// .tag.swift  
+//     background-color: $color-swift
+// .tag.testing  
+//     background-color: $color-testing
+// .tag.ui  
+//     background-color: $color-ui
+// .tag.package_manager  
+//     background-color: $color-package-manager
+// .tag.ci  
+//     background-color: $color-ci
+// .tag.network  
+//     background-color: $color-network
+// .tag.build  
+//     background-color: $color-build
+// .tag.rx  
+//     background-color: $color-rx
+
+a.tag
+    display: inline-block
+    min-width: 45px
+    padding: 2px 10px
+    font-size: $font-metadata
+    background-color: $color-text
+    color: white
+    text-align: center
+    border-radius: 4px
+
+a.tag:hover
+    color: white
+
+h1 .tag
+    align-self: center
+    margin-left: $spacing-normal
+
+// Banners for tags
+// .banner
+//     font-family: "Font Awesome 5 Free"
+//     font-weight: 900
+//     font-size: 2.2em
+//     margin-bottom: $spacing-normal
+
+// .banner.swift::before
+//     color: $color-swift
+//     content: "\f8e1"
+//     font-weight: 400
+//     font-family: "Font Awesome 5 Brands"
+
+// .banner.ui::before
+//     content: "\f5ee"
+//     color: $color-ui
+
+// .banner.architecture::before
+//     content: "\f5fd"
+//     color: $color-architecture
+
+// .banner.build::before
+//     content: "\f013"
+//     color: $color-build
+
+// .banner.ci::before
+//     content: "\f544"
+//     color: $color-ci
+
+// .banner.network::before
+//     content: "\f6ff"
+//     color: $color-network
+
+// .banner.package_manager::before
+//     content: "\f49e"
+//     color: $color-package_manager
+
+// .banner.rx::before
+//     content: "\f534"
+//     color: $color-rx
+
+// .banner.news::before
+//     content: "\f0a1"
+//     color: paleturquoise

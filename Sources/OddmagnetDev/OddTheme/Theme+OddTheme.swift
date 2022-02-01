@@ -24,7 +24,16 @@ private struct OddThemeHTMLFactory<Site: Website>: HTMLFactory {
             .lang(context.site.language),
             .head(for: index, on: context.site),
             .body {
-                H1("IndexHTML")
+                SiteHeader(context: context, selectedSectionID: nil)
+                Wrapper {
+                    H1("IndexHTML " + index.title)
+                    Paragraph(context.site.description)
+//                        .class("description")
+                    // TODO: Add Projects here
+                    H2("Aktuelle Blogposts")
+                    // TODO: Add ItemList()
+                }
+                // TODO: Add SiteFooter()
             }
         )
     }
@@ -49,4 +58,68 @@ private struct OddThemeHTMLFactory<Site: Website>: HTMLFactory {
         HTML("TagDetailsHTML")
     }
 
+}
+
+// MARK: - Components
+private struct Wrapper: ComponentContainer {
+    @ComponentBuilder var content: ContentProvider
+
+    var body: Component {
+        Div(content: content).class("wrapper")
+    }
+}
+
+private struct SiteHeader<Site: Website>: Component {
+    var context: PublishingContext<Site>
+    var selectedSectionID: Site.SectionID?
+
+    var body: Component {
+        Header {
+            Div {
+                Div {
+                    H1(
+                        Link(context.site.name, url: "/")
+                    )
+                    Span(context.site.description).class("description")
+                }.id("blog-title")
+
+                navigation
+            }.id("blog-header")
+        }
+    }
+
+    var navigation: Component {
+        Navigation {
+            List {
+                // MARK: Socials
+                // TODO: Use icons instead of text, maybe add LinkedIn as well
+                Link(
+                    "Twitter",
+                    url: "https://twitter.com/OddMagnetDev"
+                )
+                Link(
+                    "Github",
+                    url: "https://github.com/OddMagnet"
+                )
+                Link(
+                    "E-Mail",
+                    url: "mailto:mibruenen@gmail.com"
+                )
+            }
+            .class("share")
+
+            if Site.SectionID.allCases.count > 1 {
+                List(Site.SectionID.allCases) { sectionID in
+                    let section = context.sections[sectionID]
+
+                    return Link(
+                        section.title,
+                        url: section.path.absoluteString
+                    )
+                    .class(sectionID == selectedSectionID ? "selected" : "")
+                }
+                .class("menu")
+            }
+        }
+    }
 }
