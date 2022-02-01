@@ -3,6 +3,7 @@ import Publish
 import Plot
 // Plugins
 import SplashPublishPlugin
+import SassPublishPlugin
 
 // This type acts as the configuration for your website.
 struct OddmagnetDev: Website {
@@ -32,8 +33,14 @@ struct OddmagnetDev: Website {
 // This will generate your website using the built-in Foundation theme:
 try OddmagnetDev().publish(using: [
     // TODO: add plugins, e.g. Splash
-    .installPlugin(.splash(withClassPrefix: "")),
     .addMarkdownFiles(),
+    .installPlugin(.splash(withClassPrefix: "")),
+    .installPlugin(
+        .compileSass(
+            sassFilePath: "Resources/OddTheme/sass/styles.sass",
+            cssFilePath: "styles.css"
+        )
+    ),
     .copyResources(),
     .sortItems(in: .posts, by: \.date, order: .descending),
     // TODO: add custom theme
