@@ -2,7 +2,7 @@ header
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px
     
     @include darkMode
-        box-shadow: rgba(255, 255, 255, 0.9) 0px 2px 4px 0px
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 4px 0px
     
     svg
         display: block
@@ -14,7 +14,7 @@ header
         fill: var(--color-interactive)
     
     .wrapper
-        padding: 30px 0
+        padding: 10px 0 5px 0
         text-align: center
     
     a
@@ -25,8 +25,6 @@ header
         font-weight: bold
     
     nav
-        margin-top: 20px
-
         li
             display: inline-block
             margin: 0 7px
@@ -38,9 +36,14 @@ header
                 text-decoration: underline
     
     .description
-        margin-bottom: 40px
+        border-top: 0.26em solid var(--color-icon-fill)
+        border-bottom: 0.26em solid var(--color-icon-fill)
+        padding: 0.3em 0
     
     .menu
+        margin-top: 20px
+        margin-bottom: 5px
+        
         li
             .selected
                 background: var(--color-secondary)
