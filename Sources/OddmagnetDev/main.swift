@@ -18,10 +18,10 @@ struct OddmagnetDev: OddWebsite {
 
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
-        case posts
-        case projects
-        case aboutme
-        case cv
+        case posts = "Beiträge"
+        case projects = "Projekte"
+        case aboutme = "Über mich"
+        case cv = "Lebenslauf"
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
@@ -33,7 +33,7 @@ struct OddmagnetDev: OddWebsite {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://oddmagnet.dev")!
-    var name = "OddMagnet.dev"
+    var name = "[ OddMagnet.dev ]"
     var description = "Eine deutschsprachige Webseite rund um die Programmiersprache Swift"
     var language: Language { .german }
     var imagePath: Path? { nil }
