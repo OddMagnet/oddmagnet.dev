@@ -1,5 +1,5 @@
 header
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px
     
     @include darkMode
         box-shadow: rgba(255, 255, 255, 0.9) 0px 2px 4px 0px
@@ -8,16 +8,10 @@ header
         display: block
         width: 22px
         height: 22px
-        fill: $color-icon-fill-light
-
-        @include darkMode
-            fill: $color-icon-fill-dark
+        fill: var(--color-icon-fill)
         
     svg:hover
-        fill: $color-interactive-light
-
-        @include darkMode
-            fill: $color-interactive-dark
+        fill: var(--color-interactive)
     
     .wrapper
         padding: 30px 0
@@ -27,7 +21,7 @@ header
         text-decoration: none
         
     .site-name
-        font-size: $font-size-site-name
+        font-size: var(--font-size-site-name)
         font-weight: bold
     
     nav
@@ -49,22 +43,16 @@ header
     .menu
         li
             .selected
-                background: $color-secondary-dark
-
-                @include darkMode
-                background: $color-secondary-light
+                background: var(--color-secondary)
     
     .share
-        background: $color-secondary-dark
+        background: var(--color-secondary)
         position: absolute
         top: 0
         right: 0
         margin: 20px 12px
         padding: 10px
         border-radius: 8px
-        
-        @include darkMode
-            background: $color-secondary-light
-        
+                
         li
             margin: 0px 10px

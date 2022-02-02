@@ -1,24 +1,26 @@
 // Colors
-// Lightmode
-$color-background-light: #fff
-$color-primary-light: #000      // paragraphs, labels, other essentials
-$color-secondary-light: #333    // microcopy, captions, table heading, other less important stuff
-$color-interactive-light: #4c4  // links and other interactive stuff
-$color-icon-fill-light: #f44    // icons and non-text interactive stuff
-// Darkmode
-$color-background-dark: #111
-$color-primary-dark: #fff       // paragraphs, labels, other essentials
-$color-secondary-dark: #ccc     // microcopy, captions, table heading, other less important stuff
-$color-interactive-dark: #f33   // links and other interactive stuff
-$color-icon-fill-dark: #4d4     // icons and non-text interactive stuff
+html
+    // Light mode colors
+    --color-background: #fff
+    --color-primary: #000      // paragraphs, labels, other essentials
+    --color-secondary: #333    // microcopy, captions, table heading, other less important stuff
+    --color-interactive: #4c4  // links and other interactive stuff
+    --color-icon-fill: #f44    // icons and non-text interactive stuff
+
+    // Dark mode colors
+    @media (prefers-color-scheme: dark) 
+        --color-background: #111
+        --color-primary: #fff       // paragraphs, labels, other essentials
+        --color-secondary: #ccc     // microcopy, captions, table heading, other less important stuff
+        --color-interactive: #f33   // links and other interactive stuff
+        --color-icon-fill: #4d4     // icons and non-text interactive stuff
+
+    // Fonts
+    --font-size-site-name: 2.2em
+    --font-size-title: 1.6em
+    --font-size-text: 1em
 
 
-// Fonts
-$font-size-site-name: 2.2em
-$font-size-title: 1.6em
-$font-size-text: 1em
-
-
-// Spacing
-$spacing-title: 20px
-$spacing-paragraph: 16px
+    // Spacing
+    --spacing-title: 20px
+    --spacing-paragraph: 16px

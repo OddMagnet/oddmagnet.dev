@@ -4,14 +4,10 @@
     box-sizing: border-box
 
 body
-    background: $color-background-light
-    color: $color-primary-light
+    background: var(--color-background)
+    color: var(--color-primary)
     font-family: Helvetica, Arial
     text-align: center
-
-    @include darkMode
-        background-color: $color-background-dark
-        color: $color-primary-dark
     
     .wrapper
         max-width: 900px
@@ -21,22 +17,19 @@ body
         text-align: left
     
     h1
-        fonn-size: $font-size-title
-        margin-bottom: $spacing-title
+        fonn-size: var(--font-size-title)
+        margin-bottom: var(--spacing-title)
     
     h2
         margin: 20px 0
     
     p
-        font-size: $font-size-text
-        margin-bottom: $spacing-paragraph
+        font-size: var(--font-size-text)
+        margin-bottom: var(--spacing-paragraph)
     
     a
         color: inherit
     
     a:hover
         text-decoration: underline
-        color: $color-interactive-light
-
-        @include darkMode
-            color: $color-interactive-dark
+        color: var(--color-interactive)
