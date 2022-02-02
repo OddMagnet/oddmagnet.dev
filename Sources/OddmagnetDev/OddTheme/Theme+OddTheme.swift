@@ -8,8 +8,6 @@ import Publish
 import Plot
 
 public extension Theme where Site: OddWebsite {
-    /// The default "Foundation" theme that Publish ships with, a very
-    /// basic theme mostly implemented for demonstration purposes.
     static var oddTheme: Self {
         Theme(
             htmlFactory: OddThemeHTMLFactory(),
@@ -26,14 +24,12 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
             .body {
                 SiteHeader(context: context, selectedSectionID: nil)
                 Wrapper {
-                    H1("IndexHTML " + index.title)
-                    Paragraph(context.site.description)
-//                        .class("description")
-                    // TODO: Add Projects here
-                    H2("Aktuelle Blogposts")
-                    // TODO: Add ItemList()
+                    H1(index.title)
+
+                    // TODO: Projekte hier nochmal zeigen? Oder reicht in der Navigation?
+//                    ItemList()
                 }
-                // TODO: Add SiteFooter()
+                SiteFooter()
             }
         )
     }
@@ -76,48 +72,59 @@ private struct SiteHeader<Site: OddWebsite>: Component {
     var body: Component {
         Header {
             Wrapper {
-                Div {
-                    H1(
-                        Link(context.site.name, url: "/")
-                    )
-                    Span(context.site.description).class("description")
-                }.id("blog-title")
+                H1(
+                    Link(context.site.name, url: "/")
+                        .class("site-name")
+                )
 
-                navigation
-            }.id("blog-header")
+                Span(context.site.description).class("description")
+
+                if Site.SectionID.allCases.count > 1 {
+                    navigation
+                }
+
+                socials
+            }
         }
     }
 
     var navigation: Component {
         Navigation {
+            List(Site.SectionID.allCases) { sectionID in
+                let section = context.sections[sectionID]
+
+                return Link(
+                    section.title,
+                    url: section.path.absoluteString
+                )
+                .class(sectionID == selectedSectionID ? "selected" : "")
+            }
+            .class("menu")
+        }
+    }
+
+    var socials: Component {
+        Navigation {
             List(context.site.contacts) { (contactPoint, handler) in
-                // MARK: Socials
-                //href(contactPoint.url(handler)), contactPoint.svg)
                 Link(url: contactPoint.url(handler)) {
                     contactPoint.svg
                 }.class("contact-svg")
-//                Link(
-//                    "Github",
-//                    url: "https://github.com/OddMagnet"
-//                )
-//                Link(
-//                    "E-Mail",
-//                    url: "mailto:mibruenen@gmail.com"
-//                )
             }
             .class("share")
+        }
+    }
+}
 
-            if Site.SectionID.allCases.count > 1 {
-                List(Site.SectionID.allCases) { sectionID in
-                    let section = context.sections[sectionID]
-
-                    return Link(
-                        section.title,
-                        url: section.path.absoluteString
-                    )
-                    .class(sectionID == selectedSectionID ? "selected" : "")
-                }
-                .class("menu")
+private struct SiteFooter: Component {
+    var body: Component {
+        Footer {
+            Paragraph {
+                Text("In Swift mit ")
+                Link("Publish", url: "https://github.com/johnsundell/publish")
+                Text(" erstellt")
+            }
+            Paragraph {
+                Link("RSS feed", url: "/feed.rss")
             }
         }
     }
