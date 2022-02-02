@@ -7,7 +7,7 @@
 import Publish
 import Plot
 
-public extension Theme {
+public extension Theme where Site: OddWebsite {
     /// The default "Foundation" theme that Publish ships with, a very
     /// basic theme mostly implemented for demonstration purposes.
     static var oddTheme: Self {
@@ -18,7 +18,7 @@ public extension Theme {
     }
 }
 
-private struct OddThemeHTMLFactory<Site: Website>: HTMLFactory {
+private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeIndexHTML(for index: Index, context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
@@ -69,13 +69,13 @@ private struct Wrapper: ComponentContainer {
     }
 }
 
-private struct SiteHeader<Site: Website>: Component {
+private struct SiteHeader<Site: OddWebsite>: Component {
     var context: PublishingContext<Site>
     var selectedSectionID: Site.SectionID?
 
     var body: Component {
         Header {
-            Div {
+            Wrapper {
                 Div {
                     H1(
                         Link(context.site.name, url: "/")
@@ -90,21 +90,20 @@ private struct SiteHeader<Site: Website>: Component {
 
     var navigation: Component {
         Navigation {
-            List {
+            List(context.site.contacts) { (contactPoint, handler) in
                 // MARK: Socials
-                // TODO: Use icons instead of text, maybe add LinkedIn as well
-                Link(
-                    "Twitter",
-                    url: "https://twitter.com/OddMagnetDev"
-                )
-                Link(
-                    "Github",
-                    url: "https://github.com/OddMagnet"
-                )
-                Link(
-                    "E-Mail",
-                    url: "mailto:mibruenen@gmail.com"
-                )
+                //href(contactPoint.url(handler)), contactPoint.svg)
+                Link(url: contactPoint.url(handler)) {
+                    contactPoint.svg
+                }.class("contact-svg")
+//                Link(
+//                    "Github",
+//                    url: "https://github.com/OddMagnet"
+//                )
+//                Link(
+//                    "E-Mail",
+//                    url: "mailto:mibruenen@gmail.com"
+//                )
             }
             .class("share")
 

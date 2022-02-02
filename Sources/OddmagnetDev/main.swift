@@ -6,7 +6,16 @@ import SplashPublishPlugin
 import SassPublishPlugin
 
 // This type acts as the configuration for your website.
-struct OddmagnetDev: Website {
+struct OddmagnetDev: OddWebsite {
+    var contacts: [(ContactPoint, String)] {
+        [
+            (.twitter, "OddMagnetDev"),
+            (.github, "OddMagnet"),
+            (.linkedin, "OddMagnet"),
+            (.mail, "mibruenen@gmail.com")
+        ]
+    }
+
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
         case posts
