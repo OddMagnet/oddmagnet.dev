@@ -1,0 +1,42 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background: $color-background-light
+    color: $color-primary-light
+    font-family: Helvetica, Arial
+    text-align: center
+
+    @include darkMode
+        background-color: $color-background-dark
+        color: $color-primary-dark
+    
+    .wrapper
+        max-width: 900px
+        margin-left: auto
+        margin-right: auto
+        padding: 40px
+        text-align: left
+    
+    h1
+        fonn-size: $font-size-title
+        margin-bottom: $spacing-title
+    
+    h2
+        margin: 20px 0
+    
+    p
+        font-size: $font-size-text
+        margin-bottom: $spacing-paragraph
+    
+    a
+        color: inherit
+    
+    a:hover
+        text-decoration: underline
+        color: $color-interactive-light
+
+        @include darkMode
+            color: $color-interactive-dark

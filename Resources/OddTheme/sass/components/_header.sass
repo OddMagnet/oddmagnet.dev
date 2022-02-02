@@ -1,0 +1,62 @@
+header
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px
+    
+    @include darkMode
+        box-shadow: rgba(255, 255, 255, 0.9) 0px 2px 4px 0px
+    
+    svg
+        display: block
+        width: 22px
+        height: 22px
+        fill: $color-icon-fill-light
+
+        @include darkMode
+            fill: $color-icon-fill-dark
+        
+    svg:hover
+        fill: $color-interactive-light
+
+        @include darkMode
+            fill: $color-interactive-dark
+    
+    .wrapper
+        padding: 30px 0
+        text-align: center
+    
+    a
+        text-decoration: none
+        
+    .site-name
+        font-size: $font-size-site-name
+        font-weight: bold
+    
+    nav
+        margin-top: 20px
+
+        li
+            display: inline-block
+            margin: 0 7px
+            line-height: 1.5em
+            text-transform: uppercase
+            font-weight: bold
+
+            a.selected
+                text-decoration: underline
+    
+    .description
+        margin-bottom: 40px
+    
+    .share
+        background: $color-secondary-dark
+        position: absolute
+        top: 0
+        right: 0
+        margin: 20px 12px
+        padding: 10px
+        border-radius: 8px
+        
+        @include darkMode
+            background: $color-secondary-light
+        
+        li
+            margin: 0px 10px
