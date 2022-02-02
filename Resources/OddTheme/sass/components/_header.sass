@@ -46,6 +46,14 @@ header
     .description
         margin-bottom: 40px
     
+    .menu
+        li
+            .selected
+                background: $color-secondary-dark
+
+                @include darkMode
+                background: $color-secondary-light
+    
     .share
         background: $color-secondary-dark
         position: absolute
