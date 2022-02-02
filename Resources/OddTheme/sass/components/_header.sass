@@ -25,6 +25,9 @@ header
         font-weight: bold
     
     nav
+        display: flex
+        justify-content: center
+
         li
             display: inline-block
             margin: 0 7px
@@ -39,11 +42,15 @@ header
         border-top: 0.26em solid var(--color-icon-fill)
         border-bottom: 0.26em solid var(--color-icon-fill)
         padding: 0.3em 0
+        display: inline-block
+        width: 80%
     
     .menu
-        margin-top: 20px
-        margin-bottom: 5px
-        
+        margin: 20px auto 5px auto
+        width: 80%
+        display: flex
+        justify-content: space-between
+        // TODO: could maybe be further up in nav > li ?
         li
             .selected
                 background: var(--color-secondary)
