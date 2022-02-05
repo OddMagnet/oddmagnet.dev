@@ -1,0 +1,39 @@
+// Colors
+html
+    // Light mode colors
+    --color-background: #eee
+    --color-primary: #000      // paragraphs, labels, other essentials
+    --color-secondary: #333    // microcopy, captions, table heading, other less important stuff
+    --color-interactive: #4c4  // links and other interactive stuff
+    --color-icon-fill: #f44    // icons and non-text interactive stuff
+    --color-box-shadow: rgba(0, 0, 0, 0.1)      // color for box shadows
+    --color-box-shadow-hover: rgba(0,0,0,0.15)  // color for box shadows on hover
+
+    // Dark mode colors
+    @media (prefers-color-scheme: dark) 
+        --color-background: #111
+        --color-background-secondary: #333
+        --color-primary: #fff       // paragraphs, labels, other essentials
+        --color-secondary: #ccc     // microcopy, captions, table heading, other less important stuff
+        --color-interactive: #f33   // links and other interactive stuff
+        --color-icon-fill: #44aa44     // icons and non-text interactive stuff
+        --color-box-shadow: rgba(255, 255, 255, 0.1)        // color for box shadows
+        --color-box-shadow-hover: rgba(255, 255, 255, 0.15)  // color for box shadows on hover
+
+    // Tag colors, TODO: Finetune colors
+    --tag-color-blog: #6C7A89
+    --tag-color-swiftui: #00C6DE
+    --tag-color-swift: #f7725a
+    --tag-color-publish: #F47983
+    --tag-color-project: #8174a3
+
+    // Fonts
+    --font-size-site-name: 1.8em
+    --font-size-title: 1.6em
+    --font-size-item-list: 1.3em
+    --font-size-text: 1em
+
+    // Spacing
+    --spacing-title: 20px
+    --spacing-paragraph: 16px
+    --spacing-items: 32px
