@@ -1,6 +1,6 @@
 ---
 description: Wie diese Seite erstellt wurde, Teil 2.
-tags: Blog, Publish, Splash, Plugin
+tags: Blog, Publish, Swift
 ---
 # Eine deutsche Webseite über Swift, erstellt mit Swift - Teil 2
 

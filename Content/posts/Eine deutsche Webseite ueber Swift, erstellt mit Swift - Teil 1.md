@@ -1,6 +1,6 @@
 ---
 description: Wie diese Seite erstellt wurde, Teil 1.
-tags: Blog, Publish
+tags: Blog, Publish, Swift
 ---
 # Eine deutsche Webseite über Swift, erstellt mit Swift - Teil 1
 
