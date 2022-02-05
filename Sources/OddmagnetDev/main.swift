@@ -18,10 +18,10 @@ struct OddmagnetDev: OddWebsite {
 
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
-        case posts = "Beiträge"
-        case projects = "Projekte"
-        case aboutme = "Über mich"
-        case cv = "Lebenslauf"
+        case posts
+        case projects
+        case aboutme
+        case cv
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
