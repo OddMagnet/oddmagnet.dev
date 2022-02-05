@@ -26,8 +26,17 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
                 Wrapper {
                     H1(index.title)
 
-                    // TODO: Projekte hier nochmal zeigen? Oder reicht in der Navigation?
-//                    ItemList()
+                    // TODO: Aktuelle Projekte hier nochmal zeigen? Oder reicht in der Navigation?
+
+                    // TODO: Tag-list wie bei swiftunwrap.com
+
+                    ItemList(
+                        items: context.allItems(
+                            sortedBy: \.date,
+                            order: .descending
+                        ),
+                        site: context.site
+                    )
                 }
                 SiteFooter()
             }
@@ -127,5 +136,38 @@ private struct SiteFooter: Component {
                 Link("RSS feed", url: "/feed.rss")
             }
         }
+    }
+}
+
+private struct ItemList<Site: OddWebsite>: Component {
+    var items: [Item<Site>]
+    var site: Site
+
+    var body: Component {
+        List(items) { item in
+            ListItem {
+                Article {
+                    H1(Link(item.title, url: item.path.absoluteString))
+                    ItemTagList(item: item, site: site)
+                    Paragraph(item.description)
+                }
+            }.class("item")
+        }
+        .class("item-list")
+    }
+}
+
+private struct ItemTagList<Site: OddWebsite>: Component {
+    var item: Item<Site>
+    var site: Site
+
+    var body: Component {
+        List(item.tags) { tag in
+            ListItem {
+                Link(tag.string, url: site.path(for: tag).absoluteString)
+            }
+            .class(tag.string.lowercased())
+        }
+        .class("tag-list")
     }
 }
