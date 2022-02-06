@@ -1,1 +1,1 @@
-# 🚀 Aktuelle Einträge
+# 🚀 Aktuelles
