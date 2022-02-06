@@ -10,15 +10,41 @@ html
     --color-box-shadow-hover: rgba(0,0,0,0.15)  // color for box shadows on hover
 
     // Dark mode colors
-    @media (prefers-color-scheme: dark) 
+    @include darkMode
         --color-background: #111
-        --color-background-secondary: #333
         --color-primary: #fff       // paragraphs, labels, other essentials
         --color-secondary: #ccc     // microcopy, captions, table heading, other less important stuff
         --color-interactive: #f33   // links and other interactive stuff
         --color-icon-fill: #44aa44     // icons and non-text interactive stuff
         --color-box-shadow: rgba(255, 255, 255, 0.1)        // color for box shadows
         --color-box-shadow-hover: rgba(255, 255, 255, 0.15)  // color for box shadows on hover
+    
+    // TODO: light mode code colors
+    --code-background: #1a1a1a
+    --code-color: #a9bcbc
+    --code-keyword: #e73289
+    --code-type: #8281ca
+    --code-call: #348fe5
+    --code-property: #21ab9d
+    --code-number: #db6f57
+    --code-string: #fa641e
+    --code-comment: #6b8a94
+    --code-dotAccess: #92b300
+    --code-preprocessing: #b68a00
+
+    // Dark mode code colors
+    @include darkMode
+        --code-background: #1a1a1a
+        --code-color: #a9bcbc
+        --code-keyword: #e73289
+        --code-type: #8281ca
+        --code-call: #348fe5
+        --code-property: #21ab9d
+        --code-number: #db6f57
+        --code-string: #fa641e
+        --code-comment: #6b8a94
+        --code-dotAccess: #92b300
+        --code-preprocessing: #b68a00
 
     // Tag colors, TODO: Finetune colors
     --tag-color-blog: #6C7A89
@@ -29,11 +55,24 @@ html
 
     // Fonts
     --font-size-site-name: 1.8em
-    --font-size-title: 1.6em
+    --font-size-h1: 1.90em
+    --font-size-h2: 1.70em
+    --font-size-h3: 1.55em
+    --font-size-h4: 1.45em
+    --font-size-h5: 1.30em
+    --font-size-h6: 1.10em
     --font-size-item-list: 1.3em
     --font-size-text: 1em
 
     // Spacing
-    --spacing-title: 20px
-    --spacing-paragraph: 16px
-    --spacing-items: 32px
+    --spacing-site-name: 0.625em
+    --spacing-h1: 1.250em
+    --spacing-h2: 1.125em
+    --spacing-h3: 1.025em
+    --spacing-h4: 0.950em
+    --spacing-h5: 0.900em
+    --spacing-h6: 0.875em
+    --spacing-paragraph: 0.875em
+    --spacing-items: 2em
+    --spacing-content: 1em
+    --line-height: 1.2em

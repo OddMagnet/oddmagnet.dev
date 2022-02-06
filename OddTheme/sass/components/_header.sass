@@ -16,10 +16,25 @@ header
     
     a
         text-decoration: none
-        
+
+        &:hover
+            text-decoration: none
+    
+    h1
+        margin: var(--spacing-site-name)
+    
     .site-name
         font-size: var(--font-size-site-name)
         font-weight: bold
+        
+        &::before
+            content: "["
+            position: relative;
+            bottom: 0.05em;
+        &::after
+            content: "]"
+            position: relative;
+            bottom: 0.05em;
     
     nav
         display: flex
@@ -27,13 +42,13 @@ header
 
         li
             display: inline-block
-            margin: 0 7px
-            line-height: 1.5em
+            line-height: 0.7em
             text-transform: uppercase
             font-weight: bold
 
-            a.selected
-                text-decoration: underline
+            &.selected
+                border-bottom: 0.26em solid var(--color-icon-fill)
+    
     
     .description
         border-top: 0.26em solid var(--color-icon-fill)
@@ -47,10 +62,6 @@ header
         width: 80%
         display: flex
         justify-content: space-between
-        // TODO: could maybe be further up in nav > li ?
-        li
-            .selected
-                background: var(--color-secondary)
     
     .share
         background: var(--color-secondary)
@@ -58,8 +69,8 @@ header
         top: 0
         right: 0
         margin: 20px 12px
-        padding: 10px
-        border-radius: 8px
+        padding: 0.625em
+        border-radius: 0.5em
                 
         li
             margin: 0px 10px
