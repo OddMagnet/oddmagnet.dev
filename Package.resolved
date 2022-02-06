@@ -66,20 +66,11 @@
       },
       {
         "package": "Splash",
-        "repositoryURL": "https://github.com/johnsundell/splash.git",
+        "repositoryURL": "https://github.com/JohnSundell/Splash.git",
         "state": {
           "branch": null,
           "revision": "7f4df436eb78fe64fe2c32c58006e9949fa28ad8",
           "version": "0.16.0"
-        }
-      },
-      {
-        "package": "SplashPublishPlugin",
-        "repositoryURL": "https://github.com/johnsundell/splashpublishplugin",
-        "state": {
-          "branch": null,
-          "revision": "34bb50bd83b2a40c63afc35f090c76619dc149ce",
-          "version": "0.1.0"
         }
       },
       {
@@ -107,6 +98,51 @@
           "branch": null,
           "revision": "6a2ba673e1f0bdbdbf3e2eb871229bc0e7354fbe",
           "version": "1.0.1"
+        }
+      },
+      {
+        "package": "Syntax",
+        "repositoryURL": "https://github.com/nerdsupremacist/Syntax.git",
+        "state": {
+          "branch": null,
+          "revision": "1de133190d9872f6f9e882de95be60f537c61c27",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "syntax-highlight",
+        "repositoryURL": "https://github.com/nerdsupremacist/syntax-highlight.git",
+        "state": {
+          "branch": null,
+          "revision": "61ea287164c6453925d7967f9d7fa6b236752e3d",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "syntax-highlight-publish-plugin",
+        "repositoryURL": "https://github.com/nerdsupremacist/syntax-highlight-publish-plugin.git",
+        "state": {
+          "branch": null,
+          "revision": "5f23b7e2426d331c5194814451efd52a7fe25e30",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "SyntaxTree",
+        "repositoryURL": "https://github.com/nerdsupremacist/SyntaxTree.git",
+        "state": {
+          "branch": null,
+          "revision": "e05df57b9482e8122b99c59d6285c3e14ccb5b2b",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "TextMate",
+        "repositoryURL": "https://github.com/nerdsupremacist/TextMate.git",
+        "state": {
+          "branch": null,
+          "revision": "1d2289ff3097bf3f2c54381faf3996204a422c71",
+          "version": "0.1.0"
         }
       }
     ]
