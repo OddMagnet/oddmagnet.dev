@@ -44,11 +44,47 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     }
 
     func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
-        HTML("SectionHTML")
+        HTML(
+            .lang(context.site.language),
+            .head(for: section, on: context.site),
+            .body {
+                SiteHeader(context: context, selectedSectionID: section.id)
+                Wrapper {
+                    H1(section.title)
+                    ItemList(items: section.items, site: context.site)
+                }
+                SiteFooter()
+            }
+        )
     }
 
     func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {
-        HTML("ItemHTML")
+        HTML(
+            .lang(context.site.language),
+            .head(for: item, on: context.site),
+            .body(
+                .class("item-page"),
+                .components {
+                    SiteHeader(context: context, selectedSectionID: item.sectionID)
+                    Wrapper {
+                        Article {
+                            Div(item.content.body).class("content")
+                            Div {
+                                if #available(macOS 12.0, *) {
+                                    Span("Zuletzt bearbeitet: \(item.lastModified.formatted(date: .abbreviated, time: .shortened))")
+                                }
+                                Span {
+                                    Text("Markiert mit: ")
+                                    ItemTagList(item: item, site: context.site)
+                                }
+                            }
+                            .class("content-info")
+                        }
+                    }
+                    SiteFooter()
+                }
+            )
+        )
     }
 
     func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
@@ -102,10 +138,12 @@ private struct SiteHeader<Site: OddWebsite>: Component {
             List(Site.SectionID.allCases) { sectionID in
                 let section = context.sections[sectionID]
 
-                return Link(
-                    section.title,
-                    url: section.path.absoluteString
-                )
+                return ListItem {
+                    Link(
+                        section.title,
+                        url: section.path.absoluteString
+                    )
+                }
                 .class(sectionID == selectedSectionID ? "selected" : "")
             }
             .class("menu")
