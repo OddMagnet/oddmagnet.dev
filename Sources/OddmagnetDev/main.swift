@@ -2,7 +2,8 @@ import Foundation
 import Publish
 import Plot
 // Plugins
-import SplashPublishPlugin
+import SyntaxHighlightPublishPlugin
+//import SplashPublishPlugin // removing Splash since it also highlights shell code
 import SassPublishPlugin
 
 // This type acts as the configuration for your website.
@@ -33,7 +34,7 @@ struct OddmagnetDev: OddWebsite {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://oddmagnet.dev")!
-    var name = "[ OddMagnet.dev ]"
+    var name = "OddMagnet.dev"
     var description = "Eine deutschsprachige Webseite rund um die Programmiersprache Swift"
     var language: Language { .german }
     var imagePath: Path? { nil }
@@ -42,8 +43,9 @@ struct OddmagnetDev: OddWebsite {
 // This will generate your website using the built-in Foundation theme:
 try OddmagnetDev().publish(using: [
     // TODO: add plugins, e.g. Splash
+    .installPlugin(.syntaxHighlighting([.swift])),
+//    .installPlugin(.splash(withClassPrefix: "")), // removing Splash since it also highlights shell code
     .addMarkdownFiles(),
-    .installPlugin(.splash(withClassPrefix: "")),
     .installPlugin(
         .compileSass(
             sassFilePath: "Resources/OddTheme/sass/styles.sass",
