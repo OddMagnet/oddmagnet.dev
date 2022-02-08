@@ -98,7 +98,6 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeTagDetailsHTML(for page: TagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
         HTML("TagDetailsHTML")
     }
-
 }
 
 // MARK: - Components
