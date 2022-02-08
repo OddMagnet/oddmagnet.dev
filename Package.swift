@@ -14,7 +14,7 @@ let package = Package(
         .package(name: "Publish", url: "https://github.com/johnsundell/publish.git", from: "0.7.0"),
 //        .package(name: "SplashPublishPlugin", url: "https://github.com/johnsundell/splashpublishplugin", from: "0.1.0"), // removing Splash since it also highlights shell code
         .package(url: "https://github.com/nerdsupremacist/syntax-highlight-publish-plugin.git", from: "0.1.0"),
-        .package(url: "https://github.com/hejki/sasspublishplugin", from: "0.1.0")
+        .package(url: "https://github.com/hejki/sasspublishplugin.git", from: "0.1.0")
     ],
     targets: [
         .target(

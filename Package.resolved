@@ -48,7 +48,7 @@
       },
       {
         "package": "SassPublishPlugin",
-        "repositoryURL": "https://github.com/hejki/sasspublishplugin",
+        "repositoryURL": "https://github.com/hejki/sasspublishplugin.git",
         "state": {
           "branch": null,
           "revision": "69c4bfd316e474c85a8ebac589ef91d0baa5a546",
