@@ -1,4 +1,5 @@
 ---
+date: 2022-02-08 16:22
 description: Wie diese Seite erstellt wurde, Teil 1.
 tags: Blog, Publish, Swift
 ---
@@ -60,7 +61,7 @@ Jetzt kann man das Projekt auch schon direkt ausführen, mit `⌘+R` oder über 
 
 Wenn alles geklappt hat sollte man in Xcode folgenden Output bekommen
 
-```
+```bash
 Publishing PROJEKTNAME (6 steps)
 [1/6] Copy 'Resources' files
 [2/6] Add Markdown files from 'Content' folder

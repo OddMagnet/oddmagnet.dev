@@ -1,4 +1,5 @@
 ---
+date: 2022-02-08 16:25
 description: Wie diese Seite erstellt wurde, Teil 4.
 tags: Blog, Publish, Swift
 ---
