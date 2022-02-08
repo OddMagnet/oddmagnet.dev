@@ -4,6 +4,16 @@
     ul
         margin-top: var(--spacing-paragraph)
     
+    code // für inline code abschnitte
+        font-family: monospace
+        font-size: 1.1em
+        font-weight: bold
+        color: var(--code-color)
+        background-color: var(--code-background)
+        display: inline-block
+        padding: 0.3em 0.6em
+        border-radius: 0.5em
+    
     pre
         margin-top: var(--spacing-paragraph)
         background-color: var(--code-background)
@@ -11,15 +21,19 @@
         border-radius: 1em
     
     pre code
-        font-family: monospace
+        // font-family: monospace
+        font-size: 0.95em
+        font-weight: normal
+        line-height: 1.4em
+        color: var(--code-color)
         display: block
         padding: 0 1.25em
-        color: var(--code-color)
-        line-height: 1.4em
-        font-size: 0.95em
         overflow-x: auto
         white-space: pre
         -webkit-overflow-scrolling: touch
+
+        &.language-bash
+            color: #6f6
         
         .keyword
             color: var(--code-keyword)
