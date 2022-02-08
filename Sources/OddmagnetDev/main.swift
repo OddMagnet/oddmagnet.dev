@@ -30,6 +30,7 @@ struct OddmagnetDev: OddWebsite {
         // Uses the metadata from the markdown files
         let tags: [Tag]
         let description: String
+        let date: Date
     }
 
     // Update these properties to configure your website:
