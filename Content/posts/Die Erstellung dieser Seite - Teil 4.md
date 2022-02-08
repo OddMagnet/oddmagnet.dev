@@ -70,7 +70,9 @@ let package = Package(
 )
 ```
 
-Dieses muss man dann nur noch in der `main.swift` Datei importieren und installieren:
+**Wichtig**: neben dem hinzufügen des Packets muss man auch `libsass` installieren: `$ brew install libsass`
+
+Schlussendlich muss man das Plugin dann nur noch in der `main.swift` Datei importieren und installieren:
 
 ```swift
 /* andere Imports ausgelassen */
