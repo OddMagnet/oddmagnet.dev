@@ -88,15 +88,72 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     }
 
     func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
-        HTML("PageHTML")
+        HTML(
+            .lang(context.site.language),
+            .head(for: page, on: context.site),
+            .body {
+                SiteHeader(context: context, selectedSectionID: nil)
+                Wrapper(page.body)
+                SiteFooter()
+            }
+        )
     }
 
     func makeTagListHTML(for page: TagListPage, context: PublishingContext<Site>) throws -> HTML? {
-        HTML("TagListHTML")
+        HTML(
+            .lang(context.site.language),
+            .head(for: page, on: context.site),
+            .body {
+                SiteHeader(context: context, selectedSectionID: nil)
+                Wrapper {
+                    H1("Alle Markierungen durchsuchen")
+                    List(page.tags.sorted()) { tag in
+                        ListItem {
+                            Link(
+                                tag.string,
+                                url: context.site.path(for: tag).absoluteString
+                            )
+                        }
+                        .class("tag \(tag.string.lowercased())")
+                    }
+                    .class("all-tags")
+                }
+                SiteFooter()
+            }
+        )
     }
 
     func makeTagDetailsHTML(for page: TagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
-        HTML("TagDetailsHTML")
+        HTML(
+            .lang(context.site.language),
+            .head(for: page, on: context.site),
+            .body {
+                SiteHeader(context: context, selectedSectionID: nil)
+                Wrapper {
+                    H1 {
+                        Text("Markiert mit ")
+                        Span(page.tag.string)
+                            .class("tag \(page.tag.string.lowercased())")
+                    }
+
+                    Link(
+                        "Alle Markierungen durchsuchen",
+                        url: context.site.tagListPath.absoluteString
+                    )
+                    .class("browse-all")
+
+                    ItemList(
+                        items: context.items(
+                            taggedWith: page.tag,
+                            sortedBy: \.date,
+                            order: .descending
+                        ),
+                        site: context.site
+                    )
+                }
+                SiteFooter()
+            }
+        )
     }
 }
 
@@ -203,7 +260,7 @@ private struct ItemTagList<Site: OddWebsite>: Component {
             ListItem {
                 Link(tag.string, url: site.path(for: tag).absoluteString)
             }
-            .class(tag.string.lowercased())
+            .class("tag \(tag.string.lowercased())")
         }
         .class("tag-list")
     }
