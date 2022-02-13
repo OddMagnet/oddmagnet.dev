@@ -1,0 +1,51 @@
+body
+    @include xl
+        header .share
+            margin: 10px 6px
+            li
+                margin: 0px 6px
+    
+    @include lg
+        h1
+            line-height: 1.1em
+            margin-top: var(--spacing-site-name)
+        header 
+            font-size: 0.9em
+            .share 
+                margin: 5px 3px
+    
+    @include md
+        font-size: 0.9em
+        h1
+            line-height: 1.2em
+        header .share
+            display: flex
+            flex-direction: column
+            margin: 0
+            border-top-left-radius: 0
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            li
+                margin: 6px 0
+            svg
+                width: 20px
+                height: 20px
+        .wrapper
+            max-width: 90%
+        .item-list h1
+            margin-bottom: 0.5em
+    
+    @include sm
+        font-size: 0.8em
+        header
+            h1
+                border-bottom: 5px solid var(--color-icon-fill)
+            .share, .description
+                display: none
+            .menu
+                width: 80%
+                margin: 5px auto 5px auto
+            nav li
+                text-decoration: underline
+                &.selected
+                    text-decoration: none
