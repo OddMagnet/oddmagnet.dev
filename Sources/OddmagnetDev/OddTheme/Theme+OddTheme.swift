@@ -25,6 +25,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
                 SiteHeader(context: context, selectedSectionID: nil)
                 Wrapper {
                     H1(index.title)
+                        .class("index-title")
 
                     // TODO: Aktuelle Projekte hier nochmal zeigen? Oder reicht in der Navigation?
 
@@ -50,7 +51,6 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
             .body {
                 SiteHeader(context: context, selectedSectionID: section.id)
                 Wrapper {
-                    H1(section.title)
                     ItemList(items: section.items, site: context.site)
                 }
                 SiteFooter()
