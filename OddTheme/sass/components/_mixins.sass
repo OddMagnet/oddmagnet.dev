@@ -1,3 +1,29 @@
 @mixin darkMode
   @media(prefers-color-scheme: dark)
     @content
+
+// Below Large tablets and desktops
+$screen-xl-max: 1200px
+// Below Tablets and small desktops
+$screen-lg-max: 992px
+// Below Small tablets (portrait view)
+$screen-md-max: 768px
+// Below Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px
+
+// Below Extra large devices
+@mixin xl
+   @media (max-width: #{$screen-xl-max})
+       @content
+// Below Large devices
+@mixin lg
+   @media (max-width: #{$screen-lg-max})
+       @content
+// Below Medium devices
+@mixin md
+   @media (max-width: #{$screen-md-max})
+       @content
+// Below Small devices
+@mixin sm
+   @media (max-width: #{$screen-sm-max})
+       @content

@@ -108,54 +108,59 @@ body h1 {
   margin-top: var(--spacing-h1);
 }
 
-/* line 27, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 26, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+body h1.index-title {
+  margin-top: var(--spacing-site-name);
+}
+
+/* line 29, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body h2 {
   font-size: var(--font-size-h2);
   margin-top: var(--spacing-h2);
 }
 
-/* line 31, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 33, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body h3 {
   font-size: var(--font-size-h3);
   margin-top: var(--spacing-h3);
 }
 
-/* line 35, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 37, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body h4 {
   font-size: var(--font-size-h4);
   margin-top: var(--spacing-h4);
 }
 
-/* line 39, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 41, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body h5 {
   font-size: var(--font-size-h5);
   margin-top: var(--spacing-h5);
 }
 
-/* line 43, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 45, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body h6 {
   font-size: var(--font-size-h6);
   margin-top: var(--spacing-h6);
 }
 
-/* line 47, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 49, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body p {
   font-size: var(--font-size-text);
   line-height: var(--line-height);
   margin-top: var(--spacing-paragraph);
 }
 
-/* line 52, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 54, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body a {
   color: inherit;
 }
 
-/* line 55, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 57, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body ul, body ol {
   line-height: var(--line-height);
 }
 
-/* line 58, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
+/* line 60, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_general.sass */
 body a:hover {
   text-decoration: underline;
   color: var(--color-interactive);
@@ -232,14 +237,16 @@ header nav li {
   line-height: 0.7em;
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 0.26em;
 }
 
-/* line 49, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
+/* line 50, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
 header nav li.selected {
+  margin-bottom: 0;
   border-bottom: 0.26em solid var(--color-icon-fill);
 }
 
-/* line 53, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
+/* line 55, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
 header .description {
   border-top: 0.26em solid var(--color-icon-fill);
   border-bottom: 0.26em solid var(--color-icon-fill);
@@ -248,7 +255,7 @@ header .description {
   width: 80%;
 }
 
-/* line 60, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
+/* line 62, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
 header .menu {
   margin: 20px auto 5px auto;
   width: 80%;
@@ -256,18 +263,18 @@ header .menu {
   justify-content: space-between;
 }
 
-/* line 66, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
+/* line 68, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
 header .share {
   background: var(--color-secondary);
   position: absolute;
   top: 0;
   right: 0;
   margin: 20px 12px;
-  padding: 0.625em;
+  padding: 0.3em 0.625em 0.2em;
   border-radius: 0.5em;
 }
 
-/* line 75, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
+/* line 77, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_header.sass */
 header .share li {
   margin: 0px 10px;
 }
@@ -298,25 +305,26 @@ footer a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 1em;
 }
 
-/* line 6, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 7, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list h1 {
-  margin-bottom: var(--spacing-paragraph);
+  margin-bottom: var(--spacing-site-name);
   font-size: var(--font-size-item-list);
 }
 
-/* line 10, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 11, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list h1 a:hover {
   color: var(--color-icon-fill);
 }
 
-/* line 13, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 14, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list p {
   margin-bottom: 0;
 }
 
-/* line 16, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 17, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list li.item {
   display: block;
   padding: 20px;
@@ -328,31 +336,31 @@ footer a:hover {
   flex-basis: 100%;
 }
 
-/* line 26, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 27, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list li.item:nth-child(3n+1) {
   flex-basis: calc(50% - var(--spacing-items) / 2);
   margin-right: auto;
 }
 
-/* line 30, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 31, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list li.item:nth-child(3n+2) {
   flex-basis: calc(50% - var(--spacing-items) / 2);
   margin-left: var(--spacing-items);
 }
 
-/* line 34, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 35, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-list li.item:hover {
   box-shadow: var(--color-box-shadow-hover) 4px 4px 8px 0px;
   transform: translate3d(-2px, -2px, 0);
   transition: all 0.3s ease;
 }
 
-/* line 39, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 40, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list {
   margin-bottom: 15px;
 }
 
-/* line 42, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 43, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li, .tag {
   display: inline-block;
   color: #000;
@@ -360,60 +368,61 @@ footer a:hover {
   padding: 6px 6px 4px;
   border-radius: 5px;
   margin-right: 5px;
+  margin-top: 5px;
 }
 
-/* line 50, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 52, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li a:hover, .tag a:hover {
   color: #000;
 }
 
-/* line 54, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 56, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li.blog, .tag.blog {
   background-color: var(--tag-color-blog);
 }
 
-/* line 56, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 58, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li.swiftui, .tag.swiftui {
   background-color: var(--tag-color-swiftui);
 }
 
-/* line 58, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 60, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li.swift, .tag.swift {
   background-color: var(--tag-color-swift);
 }
 
-/* line 60, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 62, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li.publish, .tag.publish {
   background-color: var(--tag-color-publish);
 }
 
-/* line 62, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 64, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list li.project, .tag.project {
   background-color: var(--tag-color-project);
 }
 
-/* line 65, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 67, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .tag-list a, .tag a {
   text-decoration: none;
 }
 
-/* line 68, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 70, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .item-page .tag-list {
   display: inline-block;
 }
 
-/* line 71, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 73, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .browse-all {
   display: block;
   margin-bottom: 30px;
 }
 
-/* line 75, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 77, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .all-tags, .browse-all {
   margin-top: 15px;
 }
 
-/* line 78, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
+/* line 80, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_itemlist.sass */
 .all-tags li {
   font-size: 1.4em;
   margin-right: 10px;
@@ -426,11 +435,12 @@ footer a:hover {
 }
 
 /* line 4, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
-.content ul {
+.content ul, .content ol {
   margin-top: var(--spacing-paragraph);
+  margin-left: 1em;
 }
 
-/* line 7, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 8, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content code {
   font-family: monospace;
   font-size: 1.1em;
@@ -442,7 +452,7 @@ footer a:hover {
   border-radius: 0.5em;
 }
 
-/* line 17, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 18, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre {
   margin-top: var(--spacing-paragraph);
   background-color: var(--code-background);
@@ -450,7 +460,7 @@ footer a:hover {
   border-radius: 1em;
 }
 
-/* line 23, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 24, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code {
   font-size: 0.95em;
   font-weight: normal;
@@ -463,57 +473,57 @@ footer a:hover {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 35, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 36, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code.language-bash {
   color: #6f6;
 }
 
-/* line 38, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 39, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .keyword {
   color: var(--code-keyword);
 }
 
-/* line 40, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 41, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .type {
   color: var(--code-type);
 }
 
-/* line 42, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 43, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .call {
   color: var(--code-call);
 }
 
-/* line 44, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 45, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .property {
   color: var(--code-property);
 }
 
-/* line 46, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 47, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .number {
   color: var(--code-number);
 }
 
-/* line 48, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 49, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .string {
   color: var(--code-string);
 }
 
-/* line 50, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 51, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .comment {
   color: var(--code-comment);
 }
 
-/* line 52, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 53, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .dotAccess {
   color: var(--code-dotAccess);
 }
 
-/* line 54, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 55, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content pre code .preprocessing {
   color: var(--code-preprocessing);
 }
 
-/* line 57, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 58, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info {
   background-color: var(--color-secondary);
   color: var(--color-background);
@@ -525,18 +535,110 @@ footer a:hover {
   margin-bottom: var(--spacing-content);
 }
 
-/* line 67, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 68, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info span {
   padding: 0.2em;
 }
 
-/* line 70, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 71, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info span:first-of-type {
   margin-bottom: 0.2em;
   display: block;
 }
 
-/* line 74, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 75, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info .tag-list {
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  /* line 3, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share {
+    margin: 10px 6px;
+  }
+  /* line 5, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share li {
+    margin: 0px 6px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* line 9, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body h1 {
+    line-height: 1.1em;
+    margin-top: var(--spacing-site-name);
+  }
+  /* line 12, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header {
+    font-size: 0.9em;
+  }
+  /* line 14, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share {
+    margin: 5px 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* line 1, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body {
+    font-size: 0.9em;
+  }
+  /* line 19, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body h1 {
+    line-height: 1.2em;
+  }
+  /* line 21, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  /* line 28, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share li {
+    margin: 6px 0;
+  }
+  /* line 30, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share svg {
+    width: 20px;
+    height: 20px;
+  }
+  /* line 33, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body .wrapper {
+    max-width: 90%;
+  }
+  /* line 35, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body .item-list h1 {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 576px) {
+  /* line 1, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body {
+    font-size: 0.8em;
+  }
+  /* line 41, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header h1 {
+    border-bottom: 5px solid var(--color-icon-fill);
+  }
+  /* line 43, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .share, body header .description {
+    display: none;
+  }
+  /* line 45, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header .menu {
+    width: 80%;
+    margin: 5px auto 5px auto;
+  }
+  /* line 48, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header nav li {
+    text-decoration: underline;
+  }
+  /* line 50, ../../../../../../../../Documents/Projects/oddmagnet.dev/Resources/OddTheme/sass/components/_responsive.sass */
+  body header nav li.selected {
+    text-decoration: none;
+  }
 }
