@@ -74,3 +74,26 @@
     
     .tag-list
         margin: 0
+
+
+// Images, using the alt-attributes allows to make them float left or right
+img 
+    height: 200px
+    width: auto
+    border: 2px dashed var(--color-icon-fill)
+
+img
+    &[alt$=">"]
+        float: right
+        margin-left: 1em
+    
+    &[alt$="<"]
+        float: left
+        margin-right: 1em
+    
+    &[alt$="><"]
+        display: block
+        max-width: 100%
+        height: auto
+        margin: auto
+        float: none!important
