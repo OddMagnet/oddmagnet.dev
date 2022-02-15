@@ -88,14 +88,25 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     }
 
     func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> HTML {
-        HTML(
+        // get the current path, drop the '/', transformt the Substring back into a normal String
+        let pathString = String(page.path.absoluteString.dropFirst(1))
+        // transform the pathString into a SectionID, so it can be passed to `SiteHeader`
+        let selectedSectionID = Site.SectionID(rawValue: pathString)
+
+        return HTML(
             .lang(context.site.language),
             .head(for: page, on: context.site),
-            .body {
-                SiteHeader(context: context, selectedSectionID: nil)
-                Wrapper(page.body)
-                SiteFooter()
-            }
+            .body(
+                .class("item-page"),
+                .components {
+                    SiteHeader(
+                        context: context,
+                        selectedSectionID: selectedSectionID
+                    )
+                    Wrapper(page.body)
+                    SiteFooter()
+                }
+            )
         )
     }
 
