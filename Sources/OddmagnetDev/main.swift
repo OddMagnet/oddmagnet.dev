@@ -18,11 +18,13 @@ struct OddmagnetDev: OddWebsite {
     }
 
     enum SectionID: String, WebsiteSectionID {
-        // Add the sections that you want your website to contain here:
+        // Only single-pages need an assigned raw value
+        // sections use the title of their `index.md` file
+        // for single-pages the raw-value is used
         case posts
         case projects
-        case aboutme
-        case cv
+        case über
+        case lebenslauf
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
@@ -53,6 +55,7 @@ try OddmagnetDev().publish(using: [
             cssFilePath: "styles.css"
         )
     ),
+    .copyResources(at: "Content/images", to: nil, includingFolder: true),   // copies "images"
     .copyResources(),
     .sortItems(in: .posts, by: \.date, order: .descending),
     // TODO: add custom theme
