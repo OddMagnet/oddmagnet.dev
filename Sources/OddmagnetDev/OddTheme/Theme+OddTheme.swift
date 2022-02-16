@@ -97,13 +97,17 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
             .lang(context.site.language),
             .head(for: page, on: context.site),
             .body(
-                .class("item-page"),
+                .class("single-page"),
                 .components {
                     SiteHeader(
                         context: context,
                         selectedSectionID: selectedSectionID
                     )
-                    Wrapper(page.body)
+                    Wrapper {
+                        Article {
+                            Div(page.body).class("content")
+                        }
+                    }
                     SiteFooter()
                 }
             )
