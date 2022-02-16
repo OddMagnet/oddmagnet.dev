@@ -40,7 +40,7 @@ struct OddmagnetDev: OddWebsite {
     var name = "OddMagnet.dev"
     var description = "Eine deutschsprachige Webseite rund um die Programmiersprache Swift"
     var language: Language { .german }
-    var imagePath: Path? { nil }
+    var imagePath: Path? { "Images" }
 }
 
 // This will generate your website using the built-in Foundation theme:
@@ -55,7 +55,6 @@ try OddmagnetDev().publish(using: [
             cssFilePath: "styles.css"
         )
     ),
-    .copyResources(at: "Content/images", to: nil, includingFolder: true),   // copies "images"
     .copyResources(),
     .sortItems(in: .posts, by: \.date, order: .descending),
     // TODO: add custom theme
