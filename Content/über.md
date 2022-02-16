@@ -1,6 +1,6 @@
 # Über mich
 
-![Ich >](../Images/aboutme.jpeg) 
+![Ich >](../images/aboutme.jpeg) 
 
 ## Die Kurzfassung:
 
@@ -19,7 +19,7 @@ Ich erwähne das nicht, weil es mich ausmacht, sondern weil es ein Thema ist üb
 
 ## Die Gegenwart
 
-Durch die Vergangenheit bedingt habe ich eine hohe Ausdauer und Resilienz entwickelt, egal was das kommt, mich kriegt nichts unter, was Rückschläge angeht bin ich wie <a href="#" class="hover_img">Donald Duck<span><img src="../Images/dduck.gif" alt="Donald Duck Gif" height="100" /></span></a>, ein echtes "Steh-auf-männchen". Auch wenn es schwierig wird beware ich einen kühlen Kopf, nehme wenn nötig einen Schritt zurück, analysiere, und finde dann eine Lösung.
+Durch die Vergangenheit bedingt habe ich eine hohe Ausdauer und Resilienz entwickelt, egal was das kommt, mich kriegt nichts unter, was Rückschläge angeht bin ich wie <a href="#" class="hover_img">Donald Duck<span><img src="../images/dduck.gif" alt="Donald Duck Gif" height="100" /></span></a>, ein echtes "Steh-auf-männchen". Auch wenn es schwierig wird beware ich einen kühlen Kopf, nehme wenn nötig einen Schritt zurück, analysiere, und finde dann eine Lösung.
 
 Zum programmieren kam ich, da es so ziemlich all meine Leidenschaften zusammenbringt. Kreativität, analytisches Denken, sowie der Spaß am Lernen und lösen von Problemen. Um auch meine Kommunikations- und Teamfähigkeit einzubringen suche ich derzeit nach einem Job als iOS Entwickler.
 
