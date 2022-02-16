@@ -32,5 +32,3 @@ Diese Website habe ich erstellt:
 - um andere deutschen (Swift-)Entwickler kennen zu lernen und mein Netzwerk aufzubauen/erweitern
 - zum Teilen meiner Erkenntnisse und Reise. Feedback ist natürlich gerne gesehen
 - als kleines Sideproject, was mir hoffentlich auch ein wenig dabei hilft eine Firma zu finden die mir trotz meiner Krankheitsgeschichte eine Chance gibt :)
-
-TESTING
