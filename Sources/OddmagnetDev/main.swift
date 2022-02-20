@@ -40,7 +40,7 @@ struct OddmagnetDev: OddWebsite {
     var name = "OddMagnet.dev"
     var description = "Eine deutschsprachige Webseite rund um die Programmiersprache Swift"
     var language: Language { .german }
-    var imagePath: Path? { "Images" }
+    var imagePath: Path? { "images" }
 }
 
 // This will generate your website using the built-in Foundation theme:
