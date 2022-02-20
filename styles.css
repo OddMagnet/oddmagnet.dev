@@ -236,35 +236,36 @@ header a:hover {
 /* line 27, Resources/OddTheme/sass/components/_header.sass */
 header h1 {
   margin: var(--spacing-site-name);
+  margin-bottom: 0;
 }
 
-/* line 30, Resources/OddTheme/sass/components/_header.sass */
+/* line 31, Resources/OddTheme/sass/components/_header.sass */
 header .site-name {
   font-size: var(--font-size-site-name);
   font-weight: bold;
 }
 
-/* line 34, Resources/OddTheme/sass/components/_header.sass */
+/* line 35, Resources/OddTheme/sass/components/_header.sass */
 header .site-name::before {
   content: "[";
   position: relative;
   bottom: 0.05em;
 }
 
-/* line 38, Resources/OddTheme/sass/components/_header.sass */
+/* line 39, Resources/OddTheme/sass/components/_header.sass */
 header .site-name::after {
   content: "]";
   position: relative;
   bottom: 0.05em;
 }
 
-/* line 43, Resources/OddTheme/sass/components/_header.sass */
+/* line 44, Resources/OddTheme/sass/components/_header.sass */
 header nav {
   display: flex;
   justify-content: center;
 }
 
-/* line 47, Resources/OddTheme/sass/components/_header.sass */
+/* line 48, Resources/OddTheme/sass/components/_header.sass */
 header nav li {
   display: inline-block;
   text-transform: uppercase;
@@ -272,23 +273,23 @@ header nav li {
   flex-grow: 1;
 }
 
-/* line 53, Resources/OddTheme/sass/components/_header.sass */
+/* line 54, Resources/OddTheme/sass/components/_header.sass */
 header nav li.selected {
   margin-bottom: 0;
   background-color: var(--color-icon-fill);
 }
 
-/* line 57, Resources/OddTheme/sass/components/_header.sass */
+/* line 58, Resources/OddTheme/sass/components/_header.sass */
 header nav li.selected a:hover {
   color: var(--color-level-2);
 }
 
-/* line 61, Resources/OddTheme/sass/components/_header.sass */
+/* line 62, Resources/OddTheme/sass/components/_header.sass */
 header nav .menu li {
-  padding: 0.7em;
+  padding: 0.5em;
 }
 
-/* line 65, Resources/OddTheme/sass/components/_header.sass */
+/* line 66, Resources/OddTheme/sass/components/_header.sass */
 header .description {
   border-top: 0.26em solid var(--color-icon-fill);
   border-bottom: 0.26em solid var(--color-icon-fill);
@@ -297,14 +298,14 @@ header .description {
   width: 80%;
 }
 
-/* line 72, Resources/OddTheme/sass/components/_header.sass */
+/* line 73, Resources/OddTheme/sass/components/_header.sass */
 header .menu {
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
 
-/* line 77, Resources/OddTheme/sass/components/_header.sass */
+/* line 78, Resources/OddTheme/sass/components/_header.sass */
 header .share {
   background: var(--color-level-5);
   position: absolute;
@@ -315,7 +316,7 @@ header .share {
   border-radius: 0.5em;
 }
 
-/* line 86, Resources/OddTheme/sass/components/_header.sass */
+/* line 87, Resources/OddTheme/sass/components/_header.sass */
 header .share li {
   margin: 0px 8px;
 }
