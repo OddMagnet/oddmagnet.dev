@@ -3,8 +3,8 @@ import Publish
 import Plot
 // Plugins
 import SyntaxHighlightPublishPlugin
-//import SplashPublishPlugin // removing Splash since it also highlights shell code
 import SassPublishPlugin
+import SVGPublishPlugin
 
 // This type acts as the configuration for your website.
 struct OddmagnetDev: OddWebsite {
@@ -56,6 +56,7 @@ try OddmagnetDev().publish(using: [
         )
     ),
     .copyResources(),
+    .installPlugin(.svgPlugin()),
     .sortItems(in: .posts, by: \.date, order: .descending),
     // TODO: add custom theme
     .generateHTML(withTheme: .oddTheme),

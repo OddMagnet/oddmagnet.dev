@@ -74,6 +74,24 @@
         }
       },
       {
+        "package": "StrongTypedCSSPublishPlugin",
+        "repositoryURL": "https://github.com/c0dedbear/StrongTypedCSSPublishPlugin",
+        "state": {
+          "branch": null,
+          "revision": "90c8e68ea6c9730262f418747473998e8876ae03",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "SVGPublishPlugin",
+        "repositoryURL": "https://github.com/c0dedbear/SVGPublishPlugin",
+        "state": {
+          "branch": null,
+          "revision": "affa2e92196135d014cb260524716cfbe029bbd1",
+          "version": "0.1.3"
+        }
+      },
+      {
         "package": "Sweep",
         "repositoryURL": "https://github.com/johnsundell/sweep.git",
         "state": {
