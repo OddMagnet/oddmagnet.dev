@@ -1,0 +1,79 @@
+body
+    @include xl
+        header .share
+            margin: 10px 6px
+            li
+                margin: 0px 6px
+        
+        .share svg
+            width: 26px
+            height: 26px
+    
+    @include lg
+        h1
+            line-height: 1.2em
+            margin-top: var(--spacing-site-name)
+        header 
+            font-size: 0.9em
+            .share 
+                margin: 5px 3px
+                svg
+                    width: 22px
+                    height: 22px
+        .wrapper
+            max-width: 90%
+    
+    @include md
+        h1
+            line-height: 1.1em
+        header .share
+            display: flex
+            flex-direction: column
+            margin: 0
+            border-top-left-radius: 0
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            li
+                margin: 6px 0
+            svg
+                width: 20px
+                height: 20px
+        .wrapper
+            max-width: 90%
+        .item-list h1
+            margin-bottom: 0.5em
+    
+    @include sm
+        header
+            h1
+                border-bottom: 5px solid var(--color-icon-fill)
+                margin-bottom: 5px
+            .share, .description
+                display: none
+            .menu
+                width: 100%
+            nav .menu li
+                padding: 0.4em
+                text-decoration: underline
+                &.selected
+                    text-decoration: none
+        .wrapper
+            font-size: 0.8em
+            h1
+                font-size: 1.4em
+            .item-list
+                h1
+                    font-size: 1.1em
+        .content-info
+            padding: 0.2em
+            margin-bottom: 0
+            span
+                margin-bottom: 0!important
+                .tag
+                    padding: 3px 3px 2px
+                    margin-top: 0
+        footer
+            font-size: 0.7em
+            p
+                margin-top: 0.2em
+                margin-bottom: 0.2em
