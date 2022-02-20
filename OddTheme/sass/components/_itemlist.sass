@@ -1,0 +1,84 @@
+.item-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    margin-top: 1em
+
+    h1
+        margin-top: 0
+        margin-bottom: var(--spacing-site-name)
+        font-size: var(--font-size-item-list)
+        
+        a:hover
+            color: var(--color-icon-fill)
+    
+    p
+        margin-bottom: 0
+    
+    li.item
+        display: block
+        padding: 20px
+        border-top: 1px solid var(--color-level-4)
+        border-radius: 20px
+        background-color: var(--color-level-1)
+        margin-bottom: 15px
+        transition: all .4s ease    // for back-transformation
+        box-shadow: var(--color-box-shadow) 0px 6px 12px
+        flex-basis: 100%
+
+        &:nth-child(3n+1)
+            flex-basis: calc(50% - var(--spacing-items) / 2)
+            margin-right: auto
+        
+        &:nth-child(3n+2)
+            flex-basis: calc(50% - var(--spacing-items) / 2)
+            margin-left: var(--spacing-items)
+        
+        &:hover
+            box-shadow: var(--color-box-shadow-hover) 0px 6px 12px
+            transition: all 0.3s ease
+
+.tag-list
+    margin-bottom: 15px
+
+.tag-list li, .tag
+    display: inline-block
+    color: #000
+    font-weight: bold
+    padding: 6px 6px 4px
+    border-radius: 5px
+    margin-right: 5px
+    margin-top: 5px
+
+    a:hover
+        color: #000
+    
+    // colors for various tags. TODO: add more tags and colors
+    &.blog
+        background-color: var(--tag-color-blog)
+    &.swiftui
+        background-color: var(--tag-color-swiftui)
+    &.swift
+        background-color: var(--tag-color-swift)
+    &.publish
+        background-color: var(--tag-color-publish)
+    &.project
+        background-color: var(--tag-color-project)
+
+.tag-list a, .tag a
+    text-decoration: none
+
+.item-page .tag-list
+    display: inline-block
+
+.browse-all
+    display: block
+    margin-bottom: 30px
+
+.all-tags, .browse-all
+    margin-top: 15px
+
+.all-tags li
+    font-size: 1.4em
+    margin-right: 10px
+    padding: 6px 10px
