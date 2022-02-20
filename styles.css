@@ -574,10 +574,11 @@ footer a:hover {
   padding: 0.625em;
   border-radius: 0.5em;
   margin-left: auto;
+  margin-top: var(--spacing-items);
   margin-bottom: var(--spacing-content);
 }
 
-/* line 68, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 69, Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info span {
   padding: 0.2em;
   display: flex;
@@ -585,37 +586,37 @@ footer a:hover {
   align-items: baseline;
 }
 
-/* line 74, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 75, Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info span:first-of-type {
   margin-bottom: 0.2em;
   display: block;
 }
 
-/* line 78, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 79, Resources/OddTheme/sass/components/_contentcode.sass */
 .content-info .tag-list {
   margin: 0;
 }
 
-/* line 83, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 84, Resources/OddTheme/sass/components/_contentcode.sass */
 img {
   height: 200px;
   width: auto;
   border: 2px dashed var(--color-icon-fill);
 }
 
-/* line 89, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 90, Resources/OddTheme/sass/components/_contentcode.sass */
 img[alt$=">"] {
   float: right;
   margin-left: 1em;
 }
 
-/* line 93, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 94, Resources/OddTheme/sass/components/_contentcode.sass */
 img[alt$="<"] {
   float: left;
   margin-right: 1em;
 }
 
-/* line 97, Resources/OddTheme/sass/components/_contentcode.sass */
+/* line 98, Resources/OddTheme/sass/components/_contentcode.sass */
 img[alt$="><"] {
   display: block;
   max-width: 100%;
