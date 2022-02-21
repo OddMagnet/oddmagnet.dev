@@ -121,10 +121,10 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
                     .meta(.attribute(named: "charset", value: "utf-8")),
                     .title("\(page.title) | CV"),
                     .link(
-                        .href("../cv-css/davewhipp-screen.css"),
+                        .href("../cv-css/davewhipp-print.css"),
                         .type("text/css"),
                         .rel(.stylesheet),
-                        .attribute(named: "media", value: "screen")
+                        .attribute(named: "media", value: "print")
                     ),
                     .link(
                         .href("../cv-css/davewhipp-screen.css"),
