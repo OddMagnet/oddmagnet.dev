@@ -119,7 +119,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
                 .lang(context.site.language),
                 .head(
                     .meta(.attribute(named: "charset", value: "utf-8")),
-                    .title("\(page.title)'s Lebenslauf | CV"),
+                    .title("\(page.title) | CV"),
                     .link(
                         .href("../cv-css/davewhipp-screen.css"),
                         .type("text/css"),
