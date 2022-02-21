@@ -93,25 +93,61 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
         // transform the pathString into a SectionID, so it can be passed to `SiteHeader`
         let selectedSectionID = Site.SectionID(rawValue: pathString)
 
-        return HTML(
-            .lang(context.site.language),
-            .head(for: page, on: context.site),
-            .body(
-                .class("single-page"),
-                .components {
-                    SiteHeader(
-                        context: context,
-                        selectedSectionID: selectedSectionID
-                    )
-                    Wrapper {
-                        Article {
-                            Div(page.body).class("content")
+        // "Lebenslauf" (cv) gets special page treatment
+        if pathString != "lebenslauf" {
+            return HTML(
+                .lang(context.site.language),
+                .head(for: page, on: context.site),
+                .body(
+                    .class("single-page"),
+                    .components {
+                        SiteHeader(
+                            context: context,
+                            selectedSectionID: selectedSectionID
+                        )
+                        Wrapper {
+                            Article {
+                                Div(page.body).class("content")
+                            }
                         }
+                        SiteFooter()
                     }
-                    SiteFooter()
-                }
+                )
             )
-        )
+        } else {
+            return HTML(
+                .lang(context.site.language),
+                .head(
+                    .meta(.attribute(named: "charset", value: "utf-8")),
+                    .title("\(page.title)'s Lebenslauf | CV"),
+                    .link(
+                        .href("../cv-css/davewhipp-screen.css"),
+                        .type("text/css"),
+                        .rel(.stylesheet),
+                        .attribute(named: "media", value: "screen")
+                    ),
+                    .link(
+                        .href("../cv-css/davewhipp-screen.css"),
+                        .type("text/css"),
+                        .rel(.stylesheet),
+                        .attribute(named: "media", value: "screen")
+                    )
+                    /*
+                     <head>
+                     <meta charset="utf-8">
+                     <title>  Michael Brünen's Lebenslauf |  CV</title>
+                     <link href="media/davewhipp-screen.css" type="text/css" rel="stylesheet" media="screen">
+                     <link href="media/davewhipp-print.css" type="text/css" rel="stylesheet" media="print">
+                     </head>
+                     */
+                ),
+                .body(
+                    .components {
+                        Div(page.body).class("cv")
+                    }
+                )
+            )
+        }
     }
 
     func makeTagListHTML(for page: TagListPage, context: PublishingContext<Site>) throws -> HTML? {
