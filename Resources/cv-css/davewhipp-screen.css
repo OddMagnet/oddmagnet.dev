@@ -187,7 +187,13 @@ strong {
 	display: none;
 }
 
-
+/*
+ Keep in line with the style of the rest of the site
+ */
+.cv {
+    max-width: 70%;
+    margin: auto;
+}
 
 /*
 @media only screen and (max-width: 480px) {

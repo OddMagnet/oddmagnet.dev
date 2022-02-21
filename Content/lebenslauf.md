@@ -38,9 +38,10 @@ __Auszeit aus gesundheitlichen Gründen__
 - Inzwischen vollständige Genesung und Einsatzbereitschaft
 
 `09/2011 - 08/2014`
-__Kooperativer Studiengang der Informatik an der Hochschule Darmstadt__
+__Student an der Hochschule Darmstadt__
 
-- In Kooperation mit der Deutschen Telekom AG, nicht abgeschlossen
+- Kooperativer Studiengang der Informatik mit der Deutschen Telekom AG
+- nicht abgeschlossen
 
 ## Ausbildung
 
