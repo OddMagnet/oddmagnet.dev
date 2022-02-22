@@ -5,6 +5,7 @@ import Plot
 import SyntaxHighlightPublishPlugin
 import SassPublishPlugin
 import SVGPublishPlugin
+import MinifyCSSPublishPlugin
 
 // This type acts as the configuration for your website.
 struct OddmagnetDev: OddWebsite {
@@ -58,8 +59,8 @@ try OddmagnetDev().publish(using: [
     .copyResources(),
     .installPlugin(.svgPlugin()),
     .sortItems(in: .posts, by: \.date, order: .descending),
-    // TODO: add custom theme
     .generateHTML(withTheme: .oddTheme),
+    .installPlugin(.minifyCSS()),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
     .deploy(using: .gitHub("OddMagnet/oddmagnet.dev", branch: "main"))

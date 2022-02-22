@@ -15,6 +15,7 @@ let package = Package(
         .package(url: "https://github.com/nerdsupremacist/syntax-highlight-publish-plugin.git", from: "0.1.0"),
         .package(url: "https://github.com/hejki/sasspublishplugin.git", from: "0.1.0"),
         .package(name: "SVGPublishPlugin", url: "https://github.com/c0dedbear/SVGPublishPlugin", from: "0.1.0"),
+        .package(name: "MinifyCSSPublishPlugin", url: "https://github.com/labradon/minifycsspublishplugin", from: "0.1.0")
     ],
     targets: [
         .target(
@@ -23,7 +24,8 @@ let package = Package(
                 "Publish",
                 .product(name: "SyntaxHighlightPublishPlugin", package: "syntax-highlight-publish-plugin"),
                 .product(name: "SassPublishPlugin", package: "sasspublishplugin"),
-                "SVGPublishPlugin"
+                "SVGPublishPlugin",
+                "MinifyCSSPublishPlugin"
             ]
         )
     ]
