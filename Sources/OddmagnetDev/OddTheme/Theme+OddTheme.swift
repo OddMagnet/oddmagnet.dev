@@ -20,12 +20,11 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeIndexHTML(for index: Index, context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site),
+            .oddHead(for: index, on: context.site),
             .body {
                 SiteHeader(context: context, selectedSectionID: nil)
                 Wrapper {
                     H1(index.title)
-                        .class("index-title")
 
                     // TODO: Aktuelle Projekte hier nochmal zeigen? Oder reicht in der Navigation?
 
@@ -47,7 +46,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: section, on: context.site),
+            .oddHead(for: section, on: context.site),
             .body {
                 SiteHeader(context: context, selectedSectionID: section.id)
                 Wrapper {
@@ -61,7 +60,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: item, on: context.site),
+            .oddHead(for: item, on: context.site),
             .body(
                 .class("item-page"),
                 .components {
@@ -97,7 +96,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
         if pathString != "lebenslauf" {
             return HTML(
                 .lang(context.site.language),
-                .head(for: page, on: context.site),
+                .oddHead(for: page, on: context.site),
                 .body(
                     .class("single-page"),
                     .components {
@@ -145,7 +144,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeTagListHTML(for page: TagListPage, context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .oddHead(for: page, on: context.site),
             .body {
                 SiteHeader(context: context, selectedSectionID: nil)
                 Wrapper {
@@ -169,7 +168,7 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
     func makeTagDetailsHTML(for page: TagDetailsPage, context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .oddHead(for: page, on: context.site),
             .body {
                 SiteHeader(context: context, selectedSectionID: nil)
                 Wrapper {
@@ -306,5 +305,18 @@ private struct ItemTagList<Site: OddWebsite>: Component {
             .class("tag \(tag.string.lowercased())")
         }
         .class("tag-list")
+    }
+}
+
+private extension Node where Context == HTML.DocumentContext {
+    static func oddHead<Site: OddWebsite>(
+        for location: Location,
+        on site: Site
+    ) -> Node<HTML.DocumentContext> {
+        Node.head(
+            for: location,
+               on: site,
+               stylesheetPaths: ["/styles.css", "/gallery.css"]
+        )
     }
 }
