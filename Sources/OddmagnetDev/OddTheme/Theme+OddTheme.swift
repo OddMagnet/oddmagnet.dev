@@ -132,14 +132,6 @@ private struct OddThemeHTMLFactory<Site: OddWebsite>: HTMLFactory {
                         .rel(.stylesheet),
                         .attribute(named: "media", value: "screen")
                     )
-                    /*
-                     <head>
-                     <meta charset="utf-8">
-                     <title>  Michael Brünen's Lebenslauf |  CV</title>
-                     <link href="media/davewhipp-screen.css" type="text/css" rel="stylesheet" media="screen">
-                     <link href="media/davewhipp-print.css" type="text/css" rel="stylesheet" media="print">
-                     </head>
-                     */
                 ),
                 .body(
                     .components {
