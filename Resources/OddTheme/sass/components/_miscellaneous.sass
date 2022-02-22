@@ -10,3 +10,27 @@
         display: inline-block
         top: 1em
         left: -5em
+
+// TODO: Find a workaround for the gallery not working with the general Flex layout
+// `Body` is flex, so that the `Footer` stays at the bottom
+// but without this workaround the gallery shows up tiny
+// setting `.wrapper` to `display: contents` works, but messes with other thins
+// so this is the tedious route of setting `.gallery-wrapper` width, until I have a better solution
+.gallery-wrapper
+    display: none
+    @media screen and (min-width: 400px)
+        display: block
+        margin-top: 0.3em
+        min-width: 350px
+    @media screen and (min-width: 500px)
+        min-width: 425px
+    @media screen and (min-width: 600px)
+        min-width: 500px
+    @media screen and (min-width: 700px)
+        min-width: 575px
+    @media screen and (min-width: 800px)
+        min-width: 625px
+    @media screen and (min-width: 900px)
+        min-width: 800px
+    @media screen and (min-width: 1000px)
+        min-width: 900px
