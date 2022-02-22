@@ -191,7 +191,8 @@ strong {
  Keep in line with the style of the rest of the site
  */
 .cv {
-    max-width: 70%;
+    max-width: 1200px;
+    min-width: 900px;
     margin: auto;
 }
 
