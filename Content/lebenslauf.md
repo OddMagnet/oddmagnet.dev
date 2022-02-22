@@ -14,7 +14,7 @@ title: Michael Brünen's Lebenslauf
 
 Auf der Suche nach einem Job als iOS Entwickler
 
-### Kenntnisse
+## Kenntnisse
 
 Swift, SwiftUI, CoreData, CloudKit, MVVM, Unit Tests, Git
 
@@ -30,9 +30,9 @@ __Transnationales EU Projekt “Lernraum Europa”__
 `03/2018 - 08/2020`
 __Student an der Fachhochschule Münster__
 
-- __Studiengang Informatik__, nicht abgeschlossen
+- __Studiengang Informatik__, n.a.
 
-`09/2014 - 04/2018`
+`09/2014 - 03/2018`
 __Auszeit aus gesundheitlichen Gründen__
 
 - Inzwischen vollständige Genesung und Einsatzbereitschaft
@@ -40,8 +40,7 @@ __Auszeit aus gesundheitlichen Gründen__
 `09/2011 - 08/2014`
 __Student an der Hochschule Darmstadt__
 
-- Kooperativer Studiengang der Informatik mit der Deutschen Telekom AG
-- nicht abgeschlossen
+- Kooperativer Studiengang der Informatik mit der Deutschen Telekom AG n.a.
 
 ## Ausbildung
 
@@ -57,9 +56,11 @@ __Realschule Salzbergen__
 
 - Erweiterter Sekundarabschluss I
 
+## Zeugnisse und Zertifikate
+
+[Download](www.google.de)
 
 <!-- ### Footer
 
 Last updated: February 2022 -->
-
 
