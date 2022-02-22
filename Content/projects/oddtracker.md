@@ -10,4 +10,4 @@ Derzeit ist diese Seite noch im Aufbau, sobald diese fertig ist gibt es hier meh
 
 Für mehr Infos zu diesem:
 
-[[WIP] OddTracker, eine App um Projekte und Aufgaben zu tracken](https://github.com/OddMagnet/OddTracker)
+[WIP - OddTracker, eine App um Projekte und Aufgaben zu tracken](https://github.com/OddMagnet/OddTracker)

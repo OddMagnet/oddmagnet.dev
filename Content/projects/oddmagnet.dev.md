@@ -10,4 +10,4 @@ Derzeit ist diese Seite noch im Aufbau, sobald diese fertig ist gibt es hier meh
 
 Für mehr Infos zu diesem:
 
-[[WIP] Diese Website, erstellt in Swift](https://github.com/OddMagnet/oddmagnet.dev/)
+[WIP - Diese Website, erstellt in Swift](https://github.com/OddMagnet/oddmagnet.dev/)
