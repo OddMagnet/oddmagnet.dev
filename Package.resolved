@@ -56,6 +56,15 @@
         }
       },
       {
+        "package": "PublishGallery",
+        "repositoryURL": "https://github.com/Ze0nC/PublishGallery",
+        "state": {
+          "branch": "main",
+          "revision": "dcca342f601d2594693ef0a0aa77c5e74ef25bd6",
+          "version": null
+        }
+      },
+      {
         "package": "SassPublishPlugin",
         "repositoryURL": "https://github.com/hejki/sasspublishplugin.git",
         "state": {

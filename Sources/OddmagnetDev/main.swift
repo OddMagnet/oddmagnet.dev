@@ -6,6 +6,7 @@ import SyntaxHighlightPublishPlugin
 import SassPublishPlugin
 import SVGPublishPlugin
 import MinifyCSSPublishPlugin
+import PublishGallery
 
 // This type acts as the configuration for your website.
 struct OddmagnetDev: OddWebsite {
@@ -25,6 +26,7 @@ struct OddmagnetDev: OddWebsite {
         case posts
         case projects
         case über
+        case photos
         case lebenslauf
     }
 
@@ -46,8 +48,9 @@ struct OddmagnetDev: OddWebsite {
 
 // This will generate your website using the built-in Foundation theme:
 try OddmagnetDev().publish(using: [
-    // TODO: add plugins, e.g. Splash
+    // TODO: finetune plugins. Think about Syntax Highlighting plugins
     .installPlugin(.syntaxHighlighting([.swift])),
+    .installPlugin(.publishGallery()),
 //    .installPlugin(.splash(withClassPrefix: "")), // removing Splash since it also highlights shell code
     .addMarkdownFiles(),
     .installPlugin(
@@ -59,6 +62,10 @@ try OddmagnetDev().publish(using: [
     .copyResources(),
     .installPlugin(.svgPlugin()),
     .sortItems(in: .posts, by: \.date, order: .descending),
+    // The `styles.css` file is not put into the Ressource-paths of the theme, since
+    // the next step would then try to copy it from the 'Resources' folder, but the
+    // Gallery plugin by default already puts the CSS file in the 'Output' folder
+    // TODO: make a pull request to update the plugin
     .generateHTML(withTheme: .oddTheme),
     .installPlugin(.minifyCSS()),
     .generateRSSFeed(including: [.posts]),
