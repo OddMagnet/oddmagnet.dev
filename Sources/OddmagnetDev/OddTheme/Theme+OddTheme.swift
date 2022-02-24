@@ -309,14 +309,104 @@ private struct ItemTagList<Site: OddWebsite>: Component {
 }
 
 private extension Node where Context == HTML.DocumentContext {
-    static func oddHead<Site: OddWebsite>(
+    /// Add an HTML `<head>` tag within the current context, based
+    /// on inferred information from the current location and `Website`
+    /// implementation.
+    /// - parameter location: The location to generate a `<head>` tag for.
+    /// - parameter site: The website on which the location is located.
+    /// - parameter titleSeparator: Any string to use to separate the location's
+    ///   title from the name of the website. Default: `" | "`.
+    /// - parameter stylesheetPaths: The paths to any stylesheets to add to
+    ///   the resulting HTML page. Default: `styles.css`.
+    /// - parameter rssFeedPath: The path to any RSS feed to associate with the
+    ///   resulting HTML page. Default: `feed.rss`.
+    /// - parameter rssFeedTitle: An optional title for the page's RSS feed.
+    static func oddHead<T: OddWebsite>(
         for location: Location,
-        on site: Site
-    ) -> Node<HTML.DocumentContext> {
-        Node.head(
-            for: location,
-               on: site,
-               stylesheetPaths: ["/styles.css", "/gallery.css"]
+        on site: T,
+        titleSeparator: String = " | ",
+        stylesheetPaths: [Path] = ["/styles.css", "/gallery.css"],
+        rssFeedPath: Path? = .defaultForRSSFeed,
+        rssFeedTitle: String? = nil
+    ) -> Node {
+        var title = location.title
+
+        if title.isEmpty {
+            title = site.name
+        } else {
+            title.append(titleSeparator + site.name)
+        }
+
+        var description = location.description
+
+        if description.isEmpty {
+            description = site.description
+        }
+
+        return .head(
+            .encoding(.utf8),
+            .siteName(site.name),
+            .url(site.url(for: location)),
+            .title(title),
+            .description(description),
+            .twitterCardType(location.imagePath == nil ? .summary : .summaryLargeImage),
+            .forEach(stylesheetPaths, { .stylesheet($0) }),
+            .viewport(.accordingToDevice),
+//            .unwrap(site.favicon, { .favicon($0) }),
+            .oddFavicons(basePath: site.faviconBasePath ?? "/images/favicons/"),
+            .unwrap(rssFeedPath, { path in
+                let title = rssFeedTitle ?? "Subscribe to \(site.name)"
+                return .rssFeedLink(path.absoluteString, title: title)
+            }),
+            .unwrap(location.imagePath ?? site.imagePath, { path in
+                let url = site.url(for: path)
+                return .socialImageLink(url)
+            })
         )
+    }
+}
+
+private extension Node where Context == HTML.HeadContext {
+    /// Declare a "favicon" (a small icon typically displayed along the website's
+    /// title in various browser UIs) for the HTML page.
+    /// - parameter url: The favicon's URL.
+    /// - parameter type: The MIME type of the image (default: "image/png").
+    static func oddFavicons(basePath: String) -> Node {
+        .group([
+            .link(
+                .rel(.appleTouchIcon),
+                .attribute(named: "sizes", value: "180x180"),
+                .href(basePath.appending("apple-touch-icon.png"))
+            ),
+            .link(
+                .rel(.icon),
+                .type("image/png"),
+                .attribute(named: "sizes", value: "32x32"),
+                .href(basePath.appending("favicon-32x32.png"))
+            ),
+            .link(
+                .rel(.icon),
+                .type("image/png"),
+                .attribute(named: "sizes", value: "16x16"),
+                .href(basePath.appending("favicon-16x16.png"))
+            ),
+            .link(
+                .rel(.manifest),
+                .href(basePath.appending("site.webmanifest"))
+            ),
+            .link(
+                .rel(.maskIcon),
+                .href(basePath.appending("safari-pinned-tab.svg")),
+                .attribute(named: "content", value: "#d0d0d0")
+            ),
+            .meta(
+                .name("msapplication-TileColor"),
+                .content("d0d0d0")
+            ),
+            .meta(
+                .name("theme-color"),
+                .content("d0d0d0")
+            )
+        ])
     }
 }

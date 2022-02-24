@@ -18,6 +18,7 @@ struct OddmagnetDev: OddWebsite {
             (.mail, "mibruenen@gmail.com")
         ]
     }
+    var faviconBasePath: String?
 
     enum SectionID: String, WebsiteSectionID {
         // Only single-pages need an assigned raw value
